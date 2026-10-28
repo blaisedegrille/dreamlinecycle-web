@@ -73,9 +73,9 @@ export async function Footer({ locale }: { locale: Locale }) {
         </div>
       </div>
 
-      <div className="wrap-wide overflow-hidden border-b border-paper/15 pt-8 pb-2">
+      <div className="wrap overflow-hidden border-b border-paper/15 pt-8 pb-2">
         <p
-          className="display footer-wordmark pl-3 text-left text-[clamp(2.8rem,11.5vw,11rem)] leading-[0.78] text-paper sm:pl-5 lg:pl-8"
+          className="display footer-wordmark text-left text-[clamp(2.8rem,11.5vw,11rem)] leading-[0.78] text-paper"
         >
           <span className="block">Dreamline</span>
           <span className="outline-word block text-paper/90">Cycle</span>

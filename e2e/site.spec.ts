@@ -71,12 +71,13 @@ test("footer contains a click-to-load Google Maps widget", async ({ page }) => {
   );
 });
 
-test("large footer wordmark keeps its stacked lines left-aligned with an inset", async ({ page }) => {
+test("large footer wordmark aligns to the footer content gutter", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/en/");
   const wordmark = page.locator(".footer-wordmark");
   await expect(wordmark).toHaveCSS("text-align", "left");
-  await expect(wordmark).toHaveCSS("padding-left", "32px");
+  await expect(wordmark).toHaveCSS("padding-left", "0px");
+  await expect(wordmark.locator("..")).toHaveClass(/\bwrap\b/);
   await expect(wordmark.locator(":scope > span")).toHaveCount(2);
 });
 
