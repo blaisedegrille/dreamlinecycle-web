@@ -1,6 +1,6 @@
 # Dreamline Cycle — Website Rebuild Plan
 
-**Status:** approved direction, ready to build
+**Status:** implementation complete; pre-launch content and deployment details remain
 **Stack:** Next.js 16 + React 19 + TypeScript
 **Runtime:** Node.js 24 LTS (currently v24.22.1)
 **Output:** fully static (`out/`) — host anywhere
@@ -18,10 +18,16 @@
 | Content sources | MDX files for blog · image folders for gallery · JSON dictionaries for UI copy · TS files for services/FAQ/site data. |
 | Rendering | 100% static generation (SSG) via `output: "export"`. No server required. |
 | Styling | Tailwind CSS 4 (CSS-first `@theme`) + custom retro-cycling design system. |
-| Motion | `motion` (React) for reveals/parallax + CSS for marquee, textures, hover. |
+| Motion | CSS for marquee, textures and hover; no animation dependency. |
 | Analytics | GA4 behind a consent banner, Google Consent Mode v2. No tracking before opt-in. |
 | Forms | Static-friendly: POST to a configurable endpoint (Formspree/Web3Forms) + `tel:`/`mailto:` fallback. |
 | Deployment | Upload `out/` to any static host/CDN; also ship a Node 24 builder + nginx runtime Docker image. |
+
+### Implementation status (2026-10-28)
+
+- The localized static export, content pipelines, metadata routes, consent-gated analytics, gallery, journal and contact/legal pages are implemented.
+- Verified: `npm run typecheck`, `npm run lint`, and `npm run build`; the build emits localized URL directories under `out/`.
+- Remaining before launch: replace sample gallery/blog imagery with approved photos, confirm legal/operator details and form provider, configure the production domain/analytics as desired, supply old WordPress URLs for redirects, and run Lighthouse plus the browser test suite in the deployment environment.
 
 ### Success criteria
 
@@ -45,7 +51,7 @@
 | Language | TypeScript (pin 5.9 until TS 7 is verified with Next 16) | 5.9.x |
 | Styling | Tailwind CSS 4 + `@tailwindcss/postcss` | 4.3.x |
 | i18n | `next-intl` (localized pathnames, typed messages) | 4.14.x |
-| Motion | `motion` | 14.x |
+| Motion | CSS animations and transitions | — |
 | Icons | `lucide-react` + custom brand SVGs | 1.x |
 | Blog | `gray-matter` + `next-mdx-remote/rsc` + `remark-gfm` + `rehype-slug` | 4 / 6 / 4 |
 | Validation | `zod` | 4.x |
@@ -61,7 +67,7 @@
 | No middleware | Branded language gateway at `/` with client-side browser-language detection + remembered choice. |
 | No Image Optimization API | Build-time `sharp` pipeline generates AVIF/WebP/JPEG at 480/960/1600 px + blur placeholders. |
 | No API routes | Contact form posts to an external form endpoint; `tel:`/`mailto:` always available. |
-| No dynamic paths | `generateStaticParams()` for locales, albums, blog posts. |
+| No middleware / localized rewrites in static export | A localized catch-all route emits every configured translated path via `generateStaticParams()`. |
 | OG images at request time | Pre-generate branded PNGs at build time with `satori` + `sharp`. |
 | `redirects()` unsupported | Ship host redirects (`_redirects`, nginx `map`, `.htaccess`) for old WP URLs. |
 
@@ -364,13 +370,13 @@ dreamlinecycle-web/
 - GA4 via `@next/third-parties/google`, loaded **only after consent**.
 - Consent Mode v2: analytics/marketing denied by default, updated on accept.
 - Banner: equal-prominence Accept/Reject, preferences, re-open from footer, stored in `localStorage`.
-- Map iframe and any third-party embeds gated by consent.
+- Map iframe loads only after the visitor clicks “Load map”; it is not embedded in the initial HTML.
 - No analytics in development. Optional `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` alternative.
 - Privacy policy covers GA, cookies, form provider, hosting.
 
 ### Performance
 
-- Server components by default; client islands only for menu, switcher, filters, lightbox, form, consent, motion reveals.
+- Server components by default; client islands only for menu, switcher, filters, lightbox, form and consent.
 - Pre-generated responsive images with width/height (zero CLS), `loading="lazy"` below the fold, `fetchpriority="high"` on hero image.
 - Font subsetting + `display: swap`; preload display font only.
 - No client-side data fetching; all content baked at build.
@@ -386,35 +392,36 @@ dreamlinecycle-web/
   "engines": { "node": ">=24.0.0 <25" },
   "packageManager": "npm@11.19.1",
   "scripts": {
-    "dev": "npm run gallery && next dev",
-    "build": "npm run gallery && npm run og && npm run rss && next build",
-    "start": "npx serve out",
+    "dev": "npm run content && next dev",
+    "build": "npm run content && next build",
+    "start": "node scripts/serve-static.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
+    "content": "node scripts/make-placeholders.mjs && node scripts/sync-gallery.mjs && node scripts/make-og.mjs && node scripts/make-rss.mjs",
     "gallery": "node scripts/sync-gallery.mjs",
-    "og": "node scripts/generate-og.mjs",
-    "rss": "node scripts/generate-rss.mjs",
+    "og": "node scripts/make-og.mjs",
+    "rss": "node scripts/make-rss.mjs",
     "format": "prettier --write ."
   }
 }
 ```
 
-- `.nvmrc` → `24`; README documents `nvm use` / `fnm use`.
-- `.env.example`: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_FORM_ENDPOINT`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_MAPS_EMBED_URL`.
-- Vitest: gallery manifest, blog parsing, SEO helpers, locale fallback, zod schema.
-- Playwright: all 3 locales, nav, language switch, gallery lightbox, blog post, contact validation, 404, reduced motion, axe scan.
+- `.nvmrc` → `24.22.1`; `package.json` engines restrict Node to 24.x.
+- `.env.example`: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_FORM_ENDPOINT`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`.
+- Vitest: blog headings/translations/content, date/reading-time helpers and consent parsing.
+- Playwright: gateway locales, localized metadata, gallery-album language switching, contact labels/axe critical scan and 404.
 - Lighthouse CI against the built `out/` output.
 - ESLint flat config + Prettier + `tsc --noEmit` in CI.
 
 ### Build & deploy
 
-- `next.config.ts`: `output: "export"`, `trailingSlash: true`, `images.unoptimized: true`, `typedRoutes`.
+- `next.config.ts`: `output: "export"`, `trailingSlash: true`, `images.unoptimized: true`.
 - `npm run build` → `out/` containing HTML, assets, `404.html`, sitemap, RSS, OG images.
-- Docker: `node:24-alpine` builder → `nginx:alpine` runtime, non-root, gzip/brotli, immutable caching for hashed assets, no-cache for HTML, security headers (CSP allowing GA + Maps frames only after consent).
+- Docker: `node:24-alpine` builder → `nginx:stable-alpine` runtime, immutable caching for generated/static assets, no-cache for HTML, baseline security headers. CSP, non-root runtime and compression remain deployment hardening items.
 - GitHub Actions: Node 24 → `npm ci` → lint → typecheck → unit → build → Playwright → Lighthouse → upload `out/` artifact. Deploy step added once host is chosen.
-- `public/_redirects` for Netlify/Cloudflare Pages; sample nginx redirect map included.
+- Legacy URL redirects remain pending the old WordPress URL list; do not invent mappings.
 
 ---
 
