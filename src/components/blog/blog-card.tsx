@@ -5,6 +5,7 @@ import type { PostMeta } from "@/lib/types";
 import { formatDate } from "@/lib/format";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/format";
+import { withBasePath } from "@/lib/paths";
 
 export function BlogCard({
   post,
@@ -33,7 +34,7 @@ export function BlogCard({
         >
           {post.cover ? (
             <Image
-              src={post.cover}
+              src={withBasePath(post.cover)}
               alt={post.coverAlt || post.title}
               width={1600}
               height={1000}

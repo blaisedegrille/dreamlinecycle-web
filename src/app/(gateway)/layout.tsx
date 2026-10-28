@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/content/site";
+import { withBasePath } from "@/lib/paths";
+import { absoluteUrl } from "@/lib/seo";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -13,12 +15,12 @@ export const metadata: Metadata = {
     "Egyedi kerékpárok és teljeskörű szerviz Pécsen. · Custom bicycles and full-service care in Pécs. · Individuelle Fahrräder und kompletter Service in Pécs.",
   applicationName: site.name,
   alternates: {
-    canonical: `${site.url}/`,
+    canonical: absoluteUrl("/"),
     languages: {
-      hu: `${site.url}/hu/`,
-      en: `${site.url}/en/`,
-      de: `${site.url}/de/`,
-      "x-default": `${site.url}/`,
+      hu: absoluteUrl("/hu/"),
+      en: absoluteUrl("/en/"),
+      de: absoluteUrl("/de/"),
+      "x-default": absoluteUrl("/"),
     },
   },
   robots: { index: true, follow: true },
@@ -28,15 +30,15 @@ export const metadata: Metadata = {
     title: "Dreamline Cycle — Pécs",
     description:
       "Custom bicycles and full-service care in Pécs, Hungary. Válassz nyelvet · Choose your language · Sprache wählen.",
-    url: `${site.url}/`,
-    images: [{ url: `${site.url}/generated/og/home-hu.png`, width: 1200, height: 630 }],
+    url: absoluteUrl("/"),
+    images: [{ url: absoluteUrl("/generated/og/home-hu.png"), width: 1200, height: 630 }],
   },
   icons: {
     icon: [
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: "/apple-touch-icon.png",
+        { url: withBasePath("/icon-192.png"), sizes: "192x192", type: "image/png" },
+        { url: withBasePath("/icon-512.png"), sizes: "512x512", type: "image/png" },
+      ],
+    apple: withBasePath("/apple-touch-icon.png"),
   },
 };
 

@@ -1,4 +1,5 @@
 import { site } from "@/content/site";
+import { absoluteUrl } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 type JsonLdProps = {
@@ -25,14 +26,14 @@ function businessGraph(locale: Locale) {
     "@graph": [
       {
         "@type": "BikeStore",
-        "@id": `${site.url}/#business`,
+        "@id": absoluteUrl("/#business"),
         name,
         legalName: site.legalName,
-        url: `${site.url}/${locale}/`,
+        url: absoluteUrl(`/${locale}/`),
         telephone: site.phone,
         email: site.email,
-        image: `${site.url}/icon-512.png`,
-        logo: `${site.url}/icon-512.png`,
+        image: absoluteUrl("/icon-512.png"),
+        logo: absoluteUrl("/icon-512.png"),
         address: {
           "@type": "PostalAddress",
           streetAddress: site.address.street,
@@ -49,11 +50,11 @@ function businessGraph(locale: Locale) {
       },
       {
         "@type": "WebSite",
-        "@id": `${site.url}/#website`,
-        url: `${site.url}/${locale}/`,
+        "@id": absoluteUrl("/#website"),
+        url: absoluteUrl(`/${locale}/`),
         name,
         inLanguage: locale,
-        publisher: { "@id": `${site.url}/#business` },
+        publisher: { "@id": absoluteUrl("/#business") },
       },
     ],
   };

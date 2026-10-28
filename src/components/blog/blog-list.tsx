@@ -9,6 +9,7 @@ import type { Locale } from "@/i18n/routing";
 import type { PostMeta } from "@/lib/types";
 import { formatDate } from "@/lib/format";
 import { cn } from "@/lib/format";
+import { withBasePath } from "@/lib/paths";
 import { BlogCard } from "@/components/blog/blog-card";
 
 export function BlogList({
@@ -118,7 +119,7 @@ export function BlogList({
             <div className="relative aspect-[16/10] overflow-hidden border-b-2 border-ink bg-paper-deep lg:aspect-auto lg:border-r-2 lg:border-b-0">
               {featured.cover ? (
                 <Image
-                  src={featured.cover}
+                  src={withBasePath(featured.cover)}
                   alt={featured.coverAlt || featured.title}
                   width={1600}
                   height={1000}

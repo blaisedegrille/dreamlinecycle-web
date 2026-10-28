@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
+import { withBasePath } from "@/lib/paths";
 
 export const dynamic = "force-static";
 
@@ -9,8 +10,8 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: site.name,
     description:
       "Custom bicycles and full-service care in Pécs. Egyedi kerékpárok és teljeskörű szerviz.",
-    start_url: "/hu/",
-    scope: "/",
+    start_url: withBasePath("/hu/"),
+    scope: withBasePath("/"),
     display: "standalone",
     background_color: "#f4ebdd",
     theme_color: "#f4ebdd",
@@ -19,27 +20,27 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["shopping", "sports", "lifestyle"],
     icons: [
       {
-        src: "/icon-192.png",
+        src: withBasePath("/icon-192.png"),
         sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icon-512.png",
+        src: withBasePath("/icon-512.png"),
         sizes: "512x512",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/apple-touch-icon.png",
+        src: withBasePath("/apple-touch-icon.png"),
         sizes: "180x180",
         type: "image/png",
       },
     ],
     shortcuts: [
-      { name: "Services", url: "/hu/szolgaltatasok/" },
-      { name: "Gallery", url: "/hu/galeria/" },
-      { name: "Contact", url: "/hu/kapcsolat/" },
+      { name: "Services", url: withBasePath("/hu/szolgaltatasok/") },
+      { name: "Gallery", url: withBasePath("/hu/galeria/") },
+      { name: "Contact", url: withBasePath("/hu/kapcsolat/") },
     ],
   };
 }

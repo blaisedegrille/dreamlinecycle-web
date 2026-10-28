@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { getPathname } from "@/i18n/navigation";
 import { defaultLocale, locales, type Locale } from "@/i18n/routing";
 import { site } from "@/content/site";
+import { withBasePath } from "@/lib/paths";
 
 export type AppHref = Parameters<typeof getPathname>[0]["href"];
 
 export function absoluteUrl(path: string): string {
-  return new URL(path, site.url).toString();
+  return new URL(withBasePath(path), site.url).toString();
 }
 
 type BuildMetadataInput = {

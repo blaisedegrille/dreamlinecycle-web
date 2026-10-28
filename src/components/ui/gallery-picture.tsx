@@ -1,6 +1,7 @@
 import { cn } from "@/lib/format";
 import type { Locale } from "@/i18n/routing";
 import type { GalleryImage } from "@/lib/types";
+import { withBasePath, withBasePathSrcSet } from "@/lib/paths";
 
 export function GalleryPicture({
   image,
@@ -19,11 +20,11 @@ export function GalleryPicture({
 }) {
   return (
     <picture>
-      <source type="image/avif" srcSet={image.src.avifSrcSet} sizes={sizes} />
-      <source type="image/webp" srcSet={image.src.webpSrcSet} sizes={sizes} />
+      <source type="image/avif" srcSet={withBasePathSrcSet(image.src.avifSrcSet)} sizes={sizes} />
+      <source type="image/webp" srcSet={withBasePathSrcSet(image.src.webpSrcSet)} sizes={sizes} />
       <img
-        src={image.src.jpg}
-        srcSet={image.src.jpgSrcSet}
+        src={withBasePath(image.src.jpg)}
+        srcSet={withBasePathSrcSet(image.src.jpgSrcSet)}
         sizes={sizes}
         alt={image.alt[locale]}
         width={image.width}

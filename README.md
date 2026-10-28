@@ -35,6 +35,7 @@ Copy `.env.example` to `.env.local` for local work. `NEXT_PUBLIC_*` values are e
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical site origin used by metadata, sitemap and RSS |
+| `NEXT_PUBLIC_BASE_PATH` | Optional path prefix for project-site hosting; set automatically by the Pages workflow |
 | `NEXT_PUBLIC_GA_ID` | Optional GA4 measurement ID; loaded only after analytics consent |
 | `NEXT_PUBLIC_FORM_ENDPOINT` | Optional HTTPS endpoint accepting the contact form's JSON POST |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Optional Cloudflare Turnstile public site key |
@@ -66,6 +67,10 @@ docker run --rm -p 8080:80 dreamlinecycle-web
 ```
 
 Set public environment variables at build time. The static export does not run Next.js middleware, API routes or server actions. The contact form therefore requires an external form endpoint for submission; without one, it opens the visitor's email client. Add redirects for legacy WordPress URLs at the host once the old URL list is available; no legacy mappings are guessed in this project.
+
+### GitHub Pages
+
+The workflow in `.github/workflows/pages.yml` deploys `main` to the default project URL: <https://blaisedegrille.github.io/dreamlinecycle-web/>. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The workflow runs lint, typecheck, unit and browser tests, then builds with the repository path prefix so page links, images, feeds and metadata work from the project URL. No custom domain is configured.
 
 ## Checks
 

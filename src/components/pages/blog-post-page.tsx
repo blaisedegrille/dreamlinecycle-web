@@ -9,6 +9,7 @@ import { ArrowLeft, Clock } from "lucide-react";
 import { Link, getPathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { absoluteUrl, buildMetadata } from "@/lib/seo";
+import { withBasePath } from "@/lib/paths";
 import {
   getPost,
   getPostHeadings,
@@ -86,9 +87,9 @@ export async function BlogPostPageContent({
         author: {
           "@type": "Organization",
           name: post.author ?? site.name,
-          url: site.url,
+          url: absoluteUrl("/"),
         },
-        publisher: { "@id": `${site.url}/#business` },
+        publisher: { "@id": absoluteUrl("/#business") },
         keywords: post.tags?.join(", "),
       },
       {
@@ -156,7 +157,7 @@ export async function BlogPostPageContent({
           <div className="wrap py-5 sm:py-8">
             <figure className="relative mx-auto max-w-5xl overflow-hidden border-2 border-paper/20">
               <Image
-                src={post.cover}
+                src={withBasePath(post.cover)}
                 alt={post.coverAlt || post.title}
                 width={1600}
                 height={1000}

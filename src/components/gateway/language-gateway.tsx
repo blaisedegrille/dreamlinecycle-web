@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { localeNames, locales, type Locale } from "@/i18n/routing";
 import { gatewayCopy } from "@/content/gateway";
 import { cn } from "@/lib/format";
+import { withBasePath } from "@/lib/paths";
 
 const LOCALE_KEY = "dlc-locale";
 
@@ -65,7 +66,7 @@ export function LanguageGateway() {
         return (
           <a
             key={locale}
-            href={`/${locale}/`}
+            href={withBasePath(`/${locale}/`)}
             hrefLang={locale}
             lang={locale}
             onClick={() => {

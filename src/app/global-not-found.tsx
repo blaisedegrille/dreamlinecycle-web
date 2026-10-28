@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, Phone } from "lucide-react";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/content/site";
+import { withBasePath } from "@/lib/paths";
 import { BikeIllustration } from "@/components/brand/bike-illustration";
 import { Logo } from "@/components/brand/logo";
 import "./globals.css";
@@ -73,7 +74,7 @@ export default function GlobalNotFound() {
                   ].map((item) => (
                     <a
                       key={item.locale}
-                      href={`/${item.locale}/`}
+                      href={withBasePath(`/${item.locale}/`)}
                       hrefLang={item.locale}
                       lang={item.locale}
                       className="border-2 border-ink px-4 py-2 font-mono text-[11px] tracking-[0.14em] uppercase transition-colors hover:bg-ink hover:text-paper"

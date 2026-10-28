@@ -19,6 +19,8 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.dreamlinecycle
   /\/$/,
   "",
 );
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
+const sitePath = (path) => `${siteUrl}${basePath}${path}`;
 
 const channel = {
   hu: {
@@ -82,7 +84,7 @@ function feed(locale, posts) {
   const meta = channel[locale];
   const items = posts
     .map((post) => {
-      const url = `${siteUrl}/${locale}/blog/${post.slug}/`;
+      const url = sitePath(`/${locale}/blog/${post.slug}/`);
       return `    <item>
       <title>${escapeXml(post.title)}</title>
       <link>${escapeXml(url)}</link>
@@ -91,7 +93,7 @@ function feed(locale, posts) {
       ${post.updated ? `<dc:modified>${escapeXml(post.updated)}</dc:modified>` : ""}
       <description>${escapeXml(post.description)}</description>
       ${post.tags.map((tag) => `<category>${escapeXml(tag)}</category>`).join("\n      ")}
-      ${post.cover ? `<enclosure url="${escapeXml(`${siteUrl}${post.cover}`)}" type="image/jpeg" length="0"/>` : ""}
+      ${post.cover ? `<enclosure url="${escapeXml(sitePath(post.cover))}" type="image/jpeg" length="0"/>` : ""}
     </item>`;
     })
     .join("\n");
@@ -102,11 +104,11 @@ function feed(locale, posts) {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>${escapeXml(meta.title)}</title>
-    <link>${siteUrl}/${locale}/blog/</link>
+    <link>${sitePath(`/${locale}/blog/`)}</link>
     <description>${escapeXml(meta.description)}</description>
     <language>${meta.language}</language>
     <lastBuildDate>${lastBuild}</lastBuildDate>
-    <atom:link href="${siteUrl}/rss/${locale}.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="${sitePath(`/rss/${locale}.xml`)}" rel="self" type="application/rss+xml"/>
 ${items}
   </channel>
 </rss>

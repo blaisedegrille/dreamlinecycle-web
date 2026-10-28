@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { fontVariables } from "@/lib/fonts";
 import { routing, locales, type Locale } from "@/i18n/routing";
 import { site } from "@/content/site";
+import { withBasePath } from "@/lib/paths";
+import { absoluteUrl } from "@/lib/seo";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ConsentBanner } from "@/components/layout/consent-banner";
@@ -41,16 +43,16 @@ export async function generateMetadata({
     },
     description: t("home.description"),
     applicationName: site.name,
-    authors: [{ name: site.name, url: site.url }],
+    authors: [{ name: site.name, url: absoluteUrl("/") }],
     creator: site.name,
     publisher: site.name,
     formatDetection: { telephone: true, address: true, email: true },
     alternates: {
-      canonical: `${site.url}/${locale}/`,
+      canonical: absoluteUrl(`/${locale}/`),
       types: {
         "application/rss+xml": [
           {
-            url: `${site.url}/rss/${locale}.xml`,
+            url: absoluteUrl(`/rss/${locale}.xml`),
             title: `Dreamline Cycle — ${locale.toUpperCase()}`,
           },
         ],
@@ -58,10 +60,10 @@ export async function generateMetadata({
     },
     icons: {
       icon: [
-        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-        { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+        { url: withBasePath("/icon-192.png"), sizes: "192x192", type: "image/png" },
+        { url: withBasePath("/icon-512.png"), sizes: "512x512", type: "image/png" },
       ],
-      apple: "/apple-touch-icon.png",
+      apple: withBasePath("/apple-touch-icon.png"),
     },
     other: {
       "format-detection": "telephone=yes",
