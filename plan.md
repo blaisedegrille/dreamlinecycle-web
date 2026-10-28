@@ -10,18 +10,18 @@
 
 ## 1. Overview
 
-| Item | Decision |
-| --- | --- |
-| Goal | Replace the WordPress site with a fast, multilingual, design-led website for a Pécs bike workshop. |
-| Audience | Local riders (HU), expats/tourists (EN), German-speaking riders (DE), custom-build customers worldwide. |
-| Languages | Hungarian (source copy), English, German. Localized URL slugs. |
+| Item            | Decision                                                                                                              |
+| --------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Goal            | Replace the WordPress site with a fast, multilingual, design-led website for a Pécs bike workshop.                    |
+| Audience        | Local riders (HU), expats/tourists (EN), German-speaking riders (DE), custom-build customers worldwide.               |
+| Languages       | Hungarian (source copy), English, German. Localized URL slugs.                                                        |
 | Content sources | MDX files for blog · image folders for gallery · JSON dictionaries for UI copy · TS files for services/FAQ/site data. |
-| Rendering | 100% static generation (SSG) via `output: "export"`. No server required. |
-| Styling | Tailwind CSS 4 (CSS-first `@theme`) + custom retro-cycling design system. |
-| Motion | CSS for marquee, textures and hover; no animation dependency. |
-| Analytics | GA4 behind a consent banner, Google Consent Mode v2. No tracking before opt-in. |
-| Forms | Static-friendly: POST to a configurable endpoint (Formspree/Web3Forms) + `tel:`/`mailto:` fallback. |
-| Deployment | Upload `out/` to any static host/CDN; also ship a Node 24 builder + nginx runtime Docker image. |
+| Rendering       | 100% static generation (SSG) via `output: "export"`. No server required.                                              |
+| Styling         | Tailwind CSS 4 (CSS-first `@theme`) + custom retro-cycling design system.                                             |
+| Motion          | CSS for marquee, textures and hover; no animation dependency.                                                         |
+| Analytics       | GA4 behind a consent banner, Google Consent Mode v2. No tracking before opt-in.                                       |
+| Forms           | Static-friendly: POST to a configurable endpoint (Formspree/Web3Forms) + `tel:`/`mailto:` fallback.                   |
+| Deployment      | Upload `out/` to any static host/CDN; also ship a Node 24 builder + nginx runtime Docker image.                       |
 
 ### Implementation status (2026-10-28)
 
@@ -44,32 +44,32 @@
 
 ## 2. Decisions & versions
 
-| Area | Choice | Version |
-| --- | --- | --- |
-| Framework | Next.js App Router, TypeScript strict | 16.4.x |
-| UI | React | 19.3.x |
-| Language | TypeScript (pin 5.9 until TS 7 is verified with Next 16) | 5.9.x |
-| Styling | Tailwind CSS 4 + `@tailwindcss/postcss` | 4.3.x |
-| i18n | `next-intl` (localized pathnames, typed messages) | 4.14.x |
-| Motion | CSS animations and transitions | — |
-| Icons | `lucide-react` + custom brand SVGs | 1.x |
-| Blog | `gray-matter` + `next-mdx-remote/rsc` + `remark-gfm` + `rehype-slug` | 4 / 6 / 4 |
-| Validation | `zod` | 4.x |
-| Image + OG pipeline | `sharp` + `satori` | latest |
-| Tests | Vitest + Playwright + `@axe-core/playwright` | 5 / 1.64 |
-| Lint/format | ESLint flat config + Prettier | latest compatible |
-| Package manager | npm (preinstalled) | 11.19.x |
+| Area                | Choice                                                               | Version           |
+| ------------------- | -------------------------------------------------------------------- | ----------------- |
+| Framework           | Next.js App Router, TypeScript strict                                | 16.4.x            |
+| UI                  | React                                                                | 19.3.x            |
+| Language            | TypeScript (pin 5.9 until TS 7 is verified with Next 16)             | 5.9.x             |
+| Styling             | Tailwind CSS 4 + `@tailwindcss/postcss`                              | 4.3.x             |
+| i18n                | `next-intl` (localized pathnames, typed messages)                    | 4.14.x            |
+| Motion              | CSS animations and transitions                                       | —                 |
+| Icons               | `lucide-react` + custom brand SVGs                                   | 1.x               |
+| Blog                | `gray-matter` + `next-mdx-remote/rsc` + `remark-gfm` + `rehype-slug` | 4 / 6 / 4         |
+| Validation          | `zod`                                                                | 4.x               |
+| Image + OG pipeline | `sharp` + `satori`                                                   | latest            |
+| Tests               | Vitest + Playwright + `@axe-core/playwright`                         | 5 / 1.64          |
+| Lint/format         | ESLint flat config + Prettier                                        | latest compatible |
+| Package manager     | npm (preinstalled)                                                   | 11.19.x           |
 
 **Static-export consequences (designed around, not worked around):**
 
-| Limitation | Our solution |
-| --- | --- |
-| No middleware | Branded language gateway at `/` with client-side browser-language detection + remembered choice. |
-| No Image Optimization API | Build-time `sharp` pipeline generates AVIF/WebP/JPEG at 480/960/1600 px + blur placeholders. |
-| No API routes | Contact form posts to an external form endpoint; `tel:`/`mailto:` always available. |
+| Limitation                                          | Our solution                                                                                     |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| No middleware                                       | Branded language gateway at `/` with client-side browser-language detection + remembered choice. |
+| No Image Optimization API                           | Build-time `sharp` pipeline generates AVIF/WebP/JPEG at 480/960/1600 px + blur placeholders.     |
+| No API routes                                       | Contact form posts to an external form endpoint; `tel:`/`mailto:` always available.              |
 | No middleware / localized rewrites in static export | A localized catch-all route emits every configured translated path via `generateStaticParams()`. |
-| OG images at request time | Pre-generate branded PNGs at build time with `satori` + `sharp`. |
-| `redirects()` unsupported | Ship host redirects (`_redirects`, nginx `map`, `.htaccess`) for old WP URLs. |
+| OG images at request time                           | Pre-generate branded PNGs at build time with `satori` + `sharp`.                                 |
+| `redirects()` unsupported                           | Ship host redirects (`_redirects`, nginx `map`, `.htaccess`) for old WP URLs.                    |
 
 ---
 
@@ -77,17 +77,17 @@
 
 Localized slugs via next-intl pathnames:
 
-| Page | HU | EN | DE |
-| --- | --- | --- | --- |
-| Home | `/hu` | `/en` | `/de` |
-| Services | `/hu/szolgaltatasok` | `/en/services` | `/de/leistungen` |
-| Gallery | `/hu/galeria` | `/en/gallery` | `/de/galerie` |
-| Album | `/hu/galeria/[album]` | `/en/gallery/[album]` | `/de/galerie/[album]` |
-| Blog | `/hu/blog` | `/en/blog` | `/de/blog` |
-| Post | `/hu/blog/[slug]` | `/en/blog/[slug]` | `/de/blog/[slug]` |
-| Contact | `/hu/kapcsolat` | `/en/contact` | `/de/kontakt` |
-| Privacy | `/hu/adatvedelem` | `/en/privacy` | `/de/datenschutz` |
-| Imprint | `/hu/impresszum` | `/en/imprint` | `/de/impressum` |
+| Page     | HU                    | EN                    | DE                    |
+| -------- | --------------------- | --------------------- | --------------------- |
+| Home     | `/hu`                 | `/en`                 | `/de`                 |
+| Services | `/hu/szolgaltatasok`  | `/en/services`        | `/de/leistungen`      |
+| Gallery  | `/hu/galeria`         | `/en/gallery`         | `/de/galerie`         |
+| Album    | `/hu/galeria/[album]` | `/en/gallery/[album]` | `/de/galerie/[album]` |
+| Blog     | `/hu/blog`            | `/en/blog`            | `/de/blog`            |
+| Post     | `/hu/blog/[slug]`     | `/en/blog/[slug]`     | `/de/blog/[slug]`     |
+| Contact  | `/hu/kapcsolat`       | `/en/contact`         | `/de/kontakt`         |
+| Privacy  | `/hu/adatvedelem`     | `/en/privacy`         | `/de/datenschutz`     |
+| Imprint  | `/hu/impresszum`      | `/en/imprint`         | `/de/impressum`       |
 
 Plus: `/` language gateway, static `404.html`, `sitemap.xml`, `robots.txt`, `rss/{hu,en,de}.xml`, `manifest.webmanifest`.
 
@@ -222,13 +222,13 @@ content/blog/
 title: "..."
 description: "..."
 date: 2026-10-28
-updated: 2026-10-30        # optional
+updated: 2026-10-30 # optional
 cover: /images/blog/slug.jpg
 coverAlt: "..."
 tags: [custom, workshop]
 author: Dreamline Cycle
-translationKey: first-custom-bike   # links locales for hreflang
-slug: first-custom-bike            # optional localized slug
+translationKey: first-custom-bike # links locales for hreflang
+slug: first-custom-bike # optional localized slug
 draft: false
 ---
 ```
@@ -251,26 +251,26 @@ A modern reinterpretation of 70s/80s cycling posters: aged paper, heavy ink type
 
 ### 6.1 Palette
 
-| Token | Hex | Use |
-| --- | --- | --- |
-| `paper` | `#F4EBDD` | page background |
-| `ink` | `#17150F` | text, borders, footer |
-| `race` | `#E8401C` | primary CTA, highlights |
-| `cobalt` | `#2440E8` | secondary blocks, links |
-| `sun` | `#F2C230` | badges, marquee, accents |
-| `mint` | `#0F7A63` | success states, small accents |
-| `steel` | `#8C8778` | muted text (contrast-checked) |
+| Token    | Hex       | Use                           |
+| -------- | --------- | ----------------------------- |
+| `paper`  | `#F4EBDD` | page background               |
+| `ink`    | `#17150F` | text, borders, footer         |
+| `race`   | `#E8401C` | primary CTA, highlights       |
+| `cobalt` | `#2440E8` | secondary blocks, links       |
+| `sun`    | `#F2C230` | badges, marquee, accents      |
+| `mint`   | `#0F7A63` | success states, small accents |
+| `steel`  | `#8C8778` | muted text (contrast-checked) |
 
 Rules: ink text on paper/sun/mint; paper text on ink/race/cobalt. No gradients on text. Accent colors never used for long body copy.
 
 ### 6.2 Typography
 
-| Role | Font | Usage |
-| --- | --- | --- |
-| Display | `Archivo Black` | hero, section titles, footer wordmark (uppercase, tight) |
-| Editorial | `Instrument Serif` italic | pull quotes, eyebrow accents |
-| Body | `Space Grotesk` | paragraphs, nav, buttons |
-| Mono | `Space Mono` | labels, numbering, dates, tags |
+| Role      | Font                      | Usage                                                    |
+| --------- | ------------------------- | -------------------------------------------------------- |
+| Display   | `Archivo Black`           | hero, section titles, footer wordmark (uppercase, tight) |
+| Editorial | `Instrument Serif` italic | pull quotes, eyebrow accents                             |
+| Body      | `Space Grotesk`           | paragraphs, nav, buttons                                 |
+| Mono      | `Space Mono`              | labels, numbering, dates, tags                           |
 
 - All via `next/font/google`, subsets `latin` + `latin-ext` (Hungarian ő/ű), `display: swap`, self-hosted at build.
 - Fluid type with `clamp()`; hero 56 → 160 px.
@@ -403,8 +403,8 @@ dreamlinecycle-web/
     "gallery": "node scripts/sync-gallery.mjs",
     "og": "node scripts/make-og.mjs",
     "rss": "node scripts/make-rss.mjs",
-    "format": "prettier --write ."
-  }
+    "format": "prettier --write .",
+  },
 }
 ```
 
@@ -427,47 +427,47 @@ dreamlinecycle-web/
 
 ## 9. Milestones
 
-| # | Milestone | Deliverables | Done when |
-| --- | --- | --- | --- |
-| M0 | Foundation | Next 16 + TS + Tailwind 4 scaffold, Node 24 pins, fonts, tokens, lint/test/CI, `plan.md` | `npm run build` passes; CI green |
-| M1 | Shell & design system | Header, footer, mobile nav, language switcher, buttons, stickers, textures, motion primitives | Responsive shell looks right on 360/768/1280; keyboard nav works |
-| M2 | Home page | Hero, ticker, about, services, gallery preview, process, blog preview, contact CTA | All 3 locales render; Lighthouse ≥ 90 |
-| M3 | Gallery | Folder pipeline, variants, manifest, albums, grid, lightbox | Drop 5 photos → rebuild → appear; axe clean |
-| M4 | Blog | MDX pipeline, index/filters, post page, TOC, related, RSS, search index | Add `.mdx` → rebuild → post + RSS + sitemap update |
-| M5 | SEO, analytics, legal | Metadata/hreflang, OG images, JSON-LD, sitemap, robots, GA + consent, privacy/imprint, 404, redirects | Rich results valid; GA fires only after consent |
-| M6 | Contact & forms | Contact page, form endpoint, validation, map consent, fallback | Form submits; no-JS fallback works |
-| M7 | QA & launch | E2E, axe, Lighthouse, content check, deploy docs, README | All success criteria met |
+| #   | Milestone             | Deliverables                                                                                          | Done when                                                        |
+| --- | --------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| M0  | Foundation            | Next 16 + TS + Tailwind 4 scaffold, Node 24 pins, fonts, tokens, lint/test/CI, `plan.md`              | `npm run build` passes; CI green                                 |
+| M1  | Shell & design system | Header, footer, mobile nav, language switcher, buttons, stickers, textures, motion primitives         | Responsive shell looks right on 360/768/1280; keyboard nav works |
+| M2  | Home page             | Hero, ticker, about, services, gallery preview, process, blog preview, contact CTA                    | All 3 locales render; Lighthouse ≥ 90                            |
+| M3  | Gallery               | Folder pipeline, variants, manifest, albums, grid, lightbox                                           | Drop 5 photos → rebuild → appear; axe clean                      |
+| M4  | Blog                  | MDX pipeline, index/filters, post page, TOC, related, RSS, search index                               | Add `.mdx` → rebuild → post + RSS + sitemap update               |
+| M5  | SEO, analytics, legal | Metadata/hreflang, OG images, JSON-LD, sitemap, robots, GA + consent, privacy/imprint, 404, redirects | Rich results valid; GA fires only after consent                  |
+| M6  | Contact & forms       | Contact page, form endpoint, validation, map consent, fallback                                        | Form submits; no-JS fallback works                               |
+| M7  | QA & launch           | E2E, axe, Lighthouse, content check, deploy docs, README                                              | All success criteria met                                         |
 
 ---
 
 ## 10. What I need from the owner
 
-| Item | Needed for | Fallback until provided |
-| --- | --- | --- |
-| Logo / brand files | Header, footer, favicon, OG | Custom typographic wordmark + chainring mark |
-| Real photos (hero, workshop, 10–20 builds) | Hero, gallery | Generated retro poster placeholders, clearly marked |
-| Opening hours | Contact, footer, JSON-LD | “Call before visiting” (as on current site) |
-| Prices / price range | Services, JSON-LD | Omit prices |
-| Real testimonials | Social proof | Hidden section + Google review link |
-| Form provider choice | Contact form | Env-configurable endpoint + `mailto:` |
-| Host / domain / DNS access | Launch | Build artifact + Docker image ready |
-| Old WP URL list or sitemap | 301 redirects | Export from current site before DNS switch |
-| GA4 property ID | Analytics | Disabled until provided |
+| Item                                       | Needed for                  | Fallback until provided                             |
+| ------------------------------------------ | --------------------------- | --------------------------------------------------- |
+| Logo / brand files                         | Header, footer, favicon, OG | Custom typographic wordmark + chainring mark        |
+| Real photos (hero, workshop, 10–20 builds) | Hero, gallery               | Generated retro poster placeholders, clearly marked |
+| Opening hours                              | Contact, footer, JSON-LD    | “Call before visiting” (as on current site)         |
+| Prices / price range                       | Services, JSON-LD           | Omit prices                                         |
+| Real testimonials                          | Social proof                | Hidden section + Google review link                 |
+| Form provider choice                       | Contact form                | Env-configurable endpoint + `mailto:`               |
+| Host / domain / DNS access                 | Launch                      | Build artifact + Docker image ready                 |
+| Old WP URL list or sitemap                 | 301 redirects               | Export from current site before DNS switch          |
+| GA4 property ID                            | Analytics                   | Disabled until provided                             |
 
 ---
 
 ## 11. Risks
 
-| Risk | Mitigation |
-| --- | --- |
+| Risk                                               | Mitigation                                                                        |
+| -------------------------------------------------- | --------------------------------------------------------------------------------- |
 | Static export lacks middleware/API/image optimizer | Planned around (gateway, external form, build-time images); verified in M0 spike. |
-| Hungarian glyphs (ő, ű) missing from fonts | Use `latin-ext` subsets and visually verify all 3 locales. |
-| Placeholder content ships by accident | `TODO` markers + launch checklist + build warning for placeholder images. |
-| Large photo folders slow builds | Hash-based incremental variants, sensible max width (1600 px), AVIF. |
-| EN/DE translation quality | First-pass translations reviewed by native speaker before launch. |
-| Old SEO traffic lost | 301 map + Search Console change-of-address after launch. |
-| Consent/analytics compliance | No tracking before opt-in; documented in privacy policy. |
-| Fake reviews/hours/prices | Never invented; sections hide or omit. |
+| Hungarian glyphs (ő, ű) missing from fonts         | Use `latin-ext` subsets and visually verify all 3 locales.                        |
+| Placeholder content ships by accident              | `TODO` markers + launch checklist + build warning for placeholder images.         |
+| Large photo folders slow builds                    | Hash-based incremental variants, sensible max width (1600 px), AVIF.              |
+| EN/DE translation quality                          | First-pass translations reviewed by native speaker before launch.                 |
+| Old SEO traffic lost                               | 301 map + Search Console change-of-address after launch.                          |
+| Consent/analytics compliance                       | No tracking before opt-in; documented in privacy policy.                          |
+| Fake reviews/hours/prices                          | Never invented; sections hide or omit.                                            |
 
 ---
 
