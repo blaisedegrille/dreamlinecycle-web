@@ -71,6 +71,14 @@ test("footer contains a click-to-load Google Maps widget", async ({ page }) => {
   );
 });
 
+test("large footer wordmark centers its stacked lines", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/en/");
+  const wordmark = page.locator(".footer-wordmark");
+  await expect(wordmark).toHaveCSS("text-align", "center");
+  await expect(wordmark.locator(":scope > span")).toHaveCount(2);
+});
+
 test("unknown paths return the generated 404 page", async ({ page }) => {
   const response = await page.goto("/not-a-real-page/");
   expect(response?.status()).toBe(404);
