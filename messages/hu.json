@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "home": {
+      "title": "Egyedi kerékpárok és szerviz Pécsen",
+      "description": "Teljeskörű kerékpár szervizelés, egyedi kerékpárok építése garanciával és kézi keréképítés Pécsen, a Hegyalja utcában."
+    },
+    "services": {
+      "title": "Szolgáltatások",
+      "description": "Teljeskörű szerviz, egyedi kerékpárépítés, kézi keréképítés, védőfóliázás, waxolás és világpostázás Pécsről."
+    },
+    "gallery": {
+      "title": "Galéria",
+      "description": "Egyedi kerékpárépítések, kézzel font kerekek és pillanatok a Dreamline Cycle pécsi műhelyéből."
+    },
+    "blog": {
+      "title": "Műhelynapló",
+      "description": "Történetek, építési naplók és gyakorlati tanácsok a Dreamline Cycle műhelyéből."
+    },
+    "contact": {
+      "title": "Kapcsolat",
+      "description": "Dreamline Cycle, Pécs, Hegyalja u. 20. Telefon: +36 30 688 3723. Írj vagy hívj időpontért."
+    },
+    "privacy": {
+      "title": "Adatvédelem",
+      "description": "A Dreamline Cycle weboldal adatvédelmi tájékoztatója."
+    },
+    "imprint": {
+      "title": "Impresszum",
+      "description": "A Dreamline Cycle weboldal impresszuma és kapcsolati adatai."
+    }
+  },
+  "nav": {
+    "home": "Főoldal",
+    "services": "Szolgáltatások",
+    "gallery": "Galéria",
+    "blog": "Blog",
+    "contact": "Kapcsolat",
+    "call": "Hívás",
+    "menu": "Menü",
+    "close": "Bezárás",
+    "language": "Nyelv",
+    "skip": "Ugrás a tartalomra"
+  },
+  "common": {
+    "callToBook": "Időpont egyeztetés",
+    "viewGallery": "Építések megtekintése",
+    "readMore": "Tovább olvasom",
+    "all": "Összes",
+    "minutes": "perc",
+    "minRead": "{minutes} perc olvasás",
+    "published": "Közzétéve",
+    "updated": "Frissítve",
+    "share": "Megosztás",
+    "related": "Kapcsolódó írások",
+    "backToBlog": "Vissza a bloghoz",
+    "backHome": "Vissza a főoldalra",
+    "contactUs": "Kapcsolatfelvétel",
+    "viewAll": "Összes megtekintése",
+    "photos": "{count} fotó",
+    "photo": "fotó",
+    "cookieSettings": "Sütibeállítások",
+    "scrollDown": "Tekerj lejjebb",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "address": "Cím",
+    "follow": "Kövess minket",
+    "openInMaps": "Megnyitás térképen",
+    "loading": "Betöltés…"
+  },
+  "home": {
+    "eyebrow": "Pécs · Kerékpár szerviz és egyedi építés",
+    "titleTop": "Tekerj",
+    "titleAccent": "másképp.",
+    "intro": "Pécs szívében, a Hegyalja utcán építünk és szervizelünk kerékpárokat. Városi harcos, országúti versenygép vagy erdei MTB — a részletek számítanak.",
+    "stickerOne": "Egyedi építés",
+    "stickerTwo": "Kézi kerekek",
+    "stickerThree": "Pécs · HU",
+    "aboutEyebrow": "Rólunk",
+    "aboutTitle": "Nem csak bringákat javítunk. Élményeket építünk.",
+    "aboutBody": "A Dreamline Cycle fő profilja a kerékpárok teljeskörű szervizelése és egyedi kerékpárok építése. Legyen szó mindennapi városi bringáról, országúti versenygépről vagy erdei ösvényeken csapató MTB-ről, számíthatsz ránk szervizben, tanácsadásban és egy igazán különleges bicajban.",
+    "aboutQuote": "A jó kerékpár nem a legdrágább alkatrészekből áll. Hanem a legjobban illeszkedőkből.",
+    "facts": [
+      {
+        "value": "100%",
+        "label": "Egyedi építés"
+      },
+      {
+        "value": "07",
+        "label": "Szolgáltatás"
+      },
+      {
+        "value": "WW",
+        "label": "Világpostázás"
+      }
+    ],
+    "servicesEyebrow": "Szolgáltatások",
+    "servicesTitle": "Amit a műhelyben művelünk",
+    "servicesIntro": "Teljes szerviztől az egyedi kerekekig. Minden munka a műhelyben, kézzel, garanciával.",
+    "galleryEyebrow": "Építések",
+    "galleryTitle": "Egyedi gépek, pécsi kézzel",
+    "galleryIntro": "Egyedi építések, kézzel font kerekek és a műhely mindennapjai. A galéria a mappából frissül — új fotó, új történet.",
+    "processEyebrow": "Hogyan dolgozunk",
+    "processTitle": "A vázlattól az első tekerésig",
+    "processIntro": "Négy lépés, nulla sablon. Minden gép a te méreteidre és a te utaidra készül.",
+    "blogEyebrow": "Napló",
+    "blogTitle": "A műhely naplója",
+    "blogIntro": "Műhelytitkok, építési naplók és hasznos tanácsok a bringádhoz.",
+    "contactEyebrow": "Kapcsolat",
+    "contactTitle": "Hozd be. Beszéljük meg. Építsük meg.",
+    "contactBody": "Hozd be a bringád, vagy írj pár sort arról, mire vágysz. Egyedi építésnél az első lépés mindig egy beszélgetés.",
+    "contactNote": "Személyes kapcsolatfelvétel előtt lehetőleg telefonon érdeklődj az elérhető időpontokról és a nyitvatartásról.",
+    "ticker": [
+      "Teljeskörű szerviz",
+      "Egyedi építés",
+      "Kézi kerekek",
+      "Waxolás",
+      "Védőfólia",
+      "Csere bringa",
+      "Világpostázás"
+    ]
+  },
+  "services": {
+    "eyebrow": "Szolgáltatások",
+    "title": "Minden, ami a bringád körül történik",
+    "intro": "A rutin szerviztől a teljesen egyedi építésig. Nem adunk ki semmit a kezünkből, amíg nem lenne jó érzés ráülni.",
+    "listTitle": "Amit vállalunk",
+    "listIntro": "Hét szolgáltatás, egy műhely. Kérdés esetén hívj minket — szívesen segítünk eligazodni.",
+    "processTitle": "Így lesz a bringából a te bringád",
+    "faqTitle": "Gyakori kérdések",
+    "faqIntro": "A leggyakoribb kérdések, amiket telefonon kapunk. Ha a tiéd nincs köztük, hívj minket.",
+    "bookTitle": "Időpontot kérsz?",
+    "bookText": "A leggyorsabb út, ha felhívsz minket. Megbeszéljük, mikor tudod behozni a bringát, és mennyi idő lesz a munka."
+  },
+  "gallery": {
+    "eyebrow": "Galéria",
+    "title": "Építések és műhelypillanatok",
+    "intro": "Egyedi építések, kézzel font kerekek és a műhely mindennapjai. Válogass albumonként, vagy nézd végig az egészet.",
+    "all": "Összes",
+    "album": "Album",
+    "open": "Kép megnyitása",
+    "close": "Bezárás",
+    "next": "Következő kép",
+    "previous": "Előző kép",
+    "empty": "Hamarosan új képek érkeznek a műhelyből.",
+    "backToGallery": "Vissza a galériához",
+    "placeholderNotice": ""
+  },
+  "blog": {
+    "eyebrow": "Napló",
+    "title": "Történetek a műhelyből",
+    "intro": "Építési naplók, műhelytitkok és gyakorlati tanácsok. A bejegyzések Markdown fájlokból frissülnek.",
+    "featured": "Kiemelt írás",
+    "allPosts": "Összes bejegyzés",
+    "search": "Keresés a bejegyzésekben…",
+    "noResults": "Nincs találat. Próbálj más szót.",
+    "tags": "Címkék",
+    "toc": "Tartalomjegyzék",
+    "back": "Vissza a bloghoz",
+    "fallback": "Ez az írás egyelőre csak magyarul érhető el.",
+    "share": "Oszd meg",
+    "related": "Kapcsolódó írások",
+    "readPost": "Írás megnyitása",
+    "clearSearch": "Keresés törlése",
+    "posts": "bejegyzés"
+  },
+  "contact": {
+    "eyebrow": "Kapcsolat",
+    "title": "Beszéljük meg a következő gépet",
+    "intro": "Hívj, írj, vagy gyere be a műhelybe. Egyedi építésnél az első lépés mindig egy beszélgetés.",
+    "callTitle": "Telefon",
+    "callText": "A leggyorsabb út. Hívj minket időpontért, szervizért vagy tanácsért.",
+    "emailTitle": "E-mail",
+    "emailText": "Írj néhány sort a bringádról és arról, mire vágysz. Képeket is küldhetsz.",
+    "visitTitle": "Műhely",
+    "visitText": "Pécs, Hegyalja u. 20. A belvárosból pár perc. Kérünk, előbb telefonálj.",
+    "hoursTitle": "Nyitvatartás",
+    "hoursText": "Nincs fix nyitvatartásunk. Hívj mielőtt jössz, és egyeztetjük az időpontot.",
+    "mapTitle": "Itt találsz minket",
+    "mapConsent": "A beágyazott térkép betöltéséhez külső Google-sütikre van szükség.",
+    "loadMap": "Térkép betöltése",
+    "formTitle": "Írj nekünk",
+    "formIntro": "Írd le, miben segíthetünk. Általában egy munkanapon belül válaszolunk.",
+    "name": "Név",
+    "email": "E-mail",
+    "phone": "Telefon (opcionális)",
+    "service": "Miben segíthetünk?",
+    "servicePlaceholder": "Válassz szolgáltatást",
+    "message": "Üzenet",
+    "messagePlaceholder": "Milyen bringád van, és mire lenne szükséged?",
+    "consent": "Elfogadom, hogy az adataimat a megkeresésem megválaszolására használják.",
+    "submit": "Üzenet küldése",
+    "sending": "Küldés…",
+    "success": "Köszönjük! Megkaptuk az üzenetet, hamarosan jelentkezünk.",
+    "error": "Valami hiba történt. Hívj minket telefonon, vagy írj közvetlenül e-mailt.",
+    "fallback": "Megnyitjuk az e-mail alkalmazásodat az üzenettel.",
+    "required": "Kötelező mező",
+    "invalidEmail": "Érvénytelen e-mail cím",
+    "responseTime": "Általában 1 munkanapon belül válaszolunk.",
+    "orCall": "Inkább hívnál minket?",
+    "serviceQuestion": "Miben segíthetünk?",
+    "otherService": "Egyéb / még nem tudom"
+  },
+  "footer": {
+    "tagline": "Egyedi kerékpárok és teljeskörű szerviz Pécsen, a Hegyalja utcában.",
+    "explore": "Felfedezés",
+    "workshop": "Műhely",
+    "legal": "Jogi információk",
+    "rights": "Minden jog fenntartva.",
+    "built": "Készült Pécsen, két keréken.",
+    "newsletter": "Nincs hírlevél. Csak jó bringák.",
+    "ctaEyebrow": "Következő lépés",
+    "ctaTitle": "Hozd be a bringád.",
+    "ctaText": "Hívj minket, és egyeztetjük az időpontot.",
+    "backToTop": "Vissza a tetejére"
+  },
+  "consent": {
+    "title": "Sütik és mérés",
+    "text": "Csak a működéshez szükséges sütiket használjuk. Engedélyeddel névtelen forgalommérést (Google Analytics) is bekapcsolunk, hogy jobb oldalt építhessünk.",
+    "accept": "Elfogadom",
+    "reject": "Elutasítom",
+    "settings": "Beállítások",
+    "analytics": "Analitika",
+    "analyticsText": "Google Analytics 4 — névtelen látogatottsági adatok.",
+    "necessary": "Szükséges",
+    "necessaryText": "A weboldal működéséhez elengedhetetlen sütik.",
+    "save": "Beállítások mentése",
+    "privacy": "Adatvédelmi tájékoztató"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Elgurult a lánc.",
+    "text": "Ez az oldal nem található. Pedálozzunk vissza a műhelybe, vagy nézd meg az építéseket.",
+    "cta": "Vissza a főoldalra",
+    "gallery": "Galéria megnyitása"
+  },
+  "gateway": {
+    "eyebrow": "Pécs · Magyarország",
+    "title": "Válassz nyelvet",
+    "text": "Egyedi kerékpárok és teljeskörű szerviz Pécsen.",
+    "detected": "Átirányítás: {language}…",
+    "stay": "Maradok a választón",
+    "remember": "Megjegyezzük a választásodat.",
+    "suggested": "Ajánlott",
+    "enter": "Belépés"
+  },
+  "legal": {
+    "privacyTitle": "Adatvédelmi tájékoztató",
+    "imprintTitle": "Impresszum",
+    "updated": "Utolsó frissítés: 2026. október",
+    "privacyIntro": "Ez a tájékoztató leírja, milyen adatokat kezelünk a weboldal használata során, és milyen jogok illetnek meg.",
+    "imprintIntro": "A weboldal üzemeltetőjének adatai.",
+    "sections": {
+      "controller": "Adatkezelő",
+      "data": "Kezelt adatok",
+      "analytics": "Analitika és sütik",
+      "forms": "Kapcsolatfelvétel",
+      "rights": "Jogaid",
+      "hosting": "Tárhely",
+      "content": "Tartalom",
+      "contact": "Kapcsolat"
+    }
+  },
+  "topbar": {
+    "note": "Látogatás előtt hívj",
+    "workshop": "Műhely",
+    "language": "Nyelv"
+  }
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dreamline Cycle — Workshop journal</title>
+    <link>https://www.dreamlinecycle.hu/en/blog/</link>
+    <description>Build logs, workshop notes and practical advice from the Dreamline Cycle workshop in Pécs.</description>
+    <language>en-GB</language>
+    <lastBuildDate>Invalid Date</lastBuildDate>
+    <atom:link href="https://www.dreamlinecycle.hu/rss/en.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Why a good wheel is built by hand</title>
+      <link>https://www.dreamlinecycle.hu/en/blog/hand-built-wheels/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/en/blog/hand-built-wheels/</guid>
+      <pubDate>Invalid Date</pubDate>
+      
+      <description>Machine-built wheels are fast to make. Hand-built wheels are precise. What actually makes a wheel last, and when it is worth asking for one.</description>
+      <category>wheels</category>
+      <category>workshop</category>
+      <category>builds</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/hand-built-wheels.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Winter service: the eight-point checklist</title>
+      <link>https://www.dreamlinecycle.hu/en/blog/winter-service-checklist/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/en/blog/winter-service-checklist/</guid>
+      <pubDate>Invalid Date</pubDate>
+      <dc:modified>Tue Oct 20</dc:modified>
+      <description>Cold months are not the enemy of your bike if you prepare it. A simple winter checklist you can work through at home.</description>
+      <category>service</category>
+      <category>maintenance</category>
+      <category>winter</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/winter-service.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>A custom build, step by step</title>
+      <link>https://www.dreamlinecycle.hu/en/blog/custom-build-process/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/en/blog/custom-build-process/</guid>
+      <pubDate>Invalid Date</pubDate>
+      
+      <description>How does an idea become a bike? We walk through the process from the first conversation to handover, and what to prepare.</description>
+      <category>custom build</category>
+      <category>workshop</category>
+      <category>process</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/custom-build-process.jpg" type="image/jpeg" length="0"/>
+    </item>
+  </channel>
+</rss>

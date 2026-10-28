@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dreamline Cycle — Műhelynapló</title>
+    <link>https://www.dreamlinecycle.hu/hu/blog/</link>
+    <description>Építési naplók, műhelytitkok és gyakorlati tanácsok a pécsi Dreamline Cycle műhelyből.</description>
+    <language>hu-HU</language>
+    <lastBuildDate>Invalid Date</lastBuildDate>
+    <atom:link href="https://www.dreamlinecycle.hu/rss/hu.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Miért készül egy jó kerék kézzel?</title>
+      <link>https://www.dreamlinecycle.hu/hu/blog/kezzel-font-kerek/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/hu/blog/kezzel-font-kerek/</guid>
+      <pubDate>Invalid Date</pubDate>
+      
+      <description>A gépi fűzés gyors, a kézi fűzés pontos. Megnézzük, mitől lesz egy kerék tartós, és mikor érdemes kézi kereket kérni.</description>
+      <category>kerek</category>
+      <category>műhely</category>
+      <category>kerékpárépítés</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/hand-built-wheels.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Téli szerviz: a nyolcpontos checklista</title>
+      <link>https://www.dreamlinecycle.hu/hu/blog/teli-szerviz-checklista/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/hu/blog/teli-szerviz-checklista/</guid>
+      <pubDate>Invalid Date</pubDate>
+      <dc:modified>Tue Oct 20</dc:modified>
+      <description>A hideg hónapok nem a bringa ellenségei, ha előre felkészíted. Egy egyszerű téli checklista, amit otthon is végig tudsz nézni.</description>
+      <category>szerviz</category>
+      <category>karbantartás</category>
+      <category>tél</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/winter-service.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Egyedi építés lépésről lépésre</title>
+      <link>https://www.dreamlinecycle.hu/hu/blog/egyedi-epites-lepesrol-lepesre/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/hu/blog/egyedi-epites-lepesrol-lepesre/</guid>
+      <pubDate>Invalid Date</pubDate>
+      
+      <description>Hogyan lesz egy ötletből bringa? Végigvesszük a folyamatot a beszélgetéstől az átadásig, és megmutatjuk, mire érdemes készülni.</description>
+      <category>egyedi építés</category>
+      <category>műhely</category>
+      <category>folyamat</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/custom-build-process.jpg" type="image/jpeg" length="0"/>
+    </item>
+  </channel>
+</rss>

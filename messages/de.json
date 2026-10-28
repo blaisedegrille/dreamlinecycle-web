@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "home": {
+      "title": "Individuelle Fahrräder & Service in Pécs",
+      "description": "Kompletter Fahrradservice, individuelle Aufbauten mit Garantie und handgebaute Laufräder bei Dreamline Cycle in Pécs, Ungarn."
+    },
+    "services": {
+      "title": "Leistungen",
+      "description": "Kompletter Service, individuelle Fahrradaufbauten, handgebaute Laufräder, Schutzfolie, Wachsen und weltweiter Versand aus Pécs."
+    },
+    "gallery": {
+      "title": "Galerie",
+      "description": "Individuelle Fahrradaufbauten, handgebaute Laufräder und Momente aus der Dreamline Cycle Werkstatt in Pécs."
+    },
+    "blog": {
+      "title": "Werkstattjournal",
+      "description": "Aufbaugeschichten, Werkstattnotizen und praktische Tipps aus der Dreamline Cycle Werkstatt."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Dreamline Cycle, Hegyalja u. 20, Pécs. Telefon: +36 30 688 3723. Rufen Sie an oder schreiben Sie uns."
+    },
+    "privacy": {
+      "title": "Datenschutz",
+      "description": "Datenschutzerklärung der Dreamline Cycle Website."
+    },
+    "imprint": {
+      "title": "Impressum",
+      "description": "Impressum und Kontaktdaten der Dreamline Cycle Website."
+    }
+  },
+  "nav": {
+    "home": "Start",
+    "services": "Leistungen",
+    "gallery": "Galerie",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "call": "Anrufen",
+    "menu": "Menü",
+    "close": "Schließen",
+    "language": "Sprache",
+    "skip": "Zum Inhalt springen"
+  },
+  "common": {
+    "callToBook": "Termin anfragen",
+    "viewGallery": "Aufbauten ansehen",
+    "readMore": "Weiterlesen",
+    "all": "Alle",
+    "minutes": "Min.",
+    "minRead": "{minutes} Min. Lesezeit",
+    "published": "Veröffentlicht",
+    "updated": "Aktualisiert",
+    "share": "Teilen",
+    "related": "Weiterlesen",
+    "backToBlog": "Zurück zum Blog",
+    "backHome": "Zurück zur Startseite",
+    "contactUs": "Kontakt aufnehmen",
+    "viewAll": "Alle ansehen",
+    "photos": "{count} Fotos",
+    "photo": "Foto",
+    "cookieSettings": "Cookie-Einstellungen",
+    "scrollDown": "Weiter scrollen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "address": "Adresse",
+    "follow": "Folge uns",
+    "openInMaps": "In Maps öffnen",
+    "loading": "Wird geladen…"
+  },
+  "home": {
+    "eyebrow": "Pécs · Fahrradservice & individuelle Aufbauten",
+    "titleTop": "Fahr",
+    "titleAccent": "anders.",
+    "intro": "Mitten in Pécs, in der Hegyalja utca, bauen und warten wir Fahrräder. Stadtflitzer, Rennmaschine oder Trail-MTB — die Details zählen.",
+    "stickerOne": "Individueller Aufbau",
+    "stickerTwo": "Handgebaute Laufräder",
+    "stickerThree": "Pécs · HU",
+    "aboutEyebrow": "Über uns",
+    "aboutTitle": "Wir reparieren nicht nur Räder. Wir bauen Erlebnisse.",
+    "aboutBody": "Dreamline Cycle ist eine Full-Service-Fahrradwerkstatt und ein Studio für individuelle Aufbauten. Ob Alltagsrad, Rennmaschine oder MTB für die Trails — wir sind für Service, Beratung und ein wirklich besonderes Fahrrad für Sie da.",
+    "aboutQuote": "Ein gutes Fahrrad besteht nicht aus den teuersten Teilen. Sondern aus den Teilen, die am besten passen.",
+    "facts": [
+      {
+        "value": "100%",
+        "label": "Individuell"
+      },
+      {
+        "value": "07",
+        "label": "Leistungen"
+      },
+      {
+        "value": "WW",
+        "label": "Weltversand"
+      }
+    ],
+    "servicesEyebrow": "Leistungen",
+    "servicesTitle": "Was in der Werkstatt passiert",
+    "servicesIntro": "Vom kompletten Service bis zu einzigartigen Laufrädern. Alles im Haus, von Hand, mit Garantie.",
+    "galleryEyebrow": "Aufbauten",
+    "galleryTitle": "Einzelstücke aus Pécs",
+    "galleryIntro": "Individuelle Aufbauten, handgebaute Laufräder und der Werkstattalltag. Die Galerie aktualisiert sich aus einem Ordner — neues Foto, neue Geschichte.",
+    "processEyebrow": "So arbeiten wir",
+    "processTitle": "Vom ersten Entwurf zur ersten Fahrt",
+    "processIntro": "Vier Schritte, keine Schablonen. Jedes Rad entsteht für Ihre Maße und Ihre Straßen.",
+    "blogEyebrow": "Journal",
+    "blogTitle": "Das Werkstattjournal",
+    "blogIntro": "Aufbauberichte, Werkstattgeheimnisse und praktische Tipps für Ihr Rad.",
+    "contactEyebrow": "Kontakt",
+    "contactTitle": "Bring es vorbei. Reden wir. Bauen wir es.",
+    "contactBody": "Bringen Sie Ihr Rad vorbei oder schreiben Sie uns ein paar Zeilen zu Ihrem Wunsch. Ein individueller Aufbau beginnt immer mit einem Gespräch.",
+    "contactNote": "Bitte rufen Sie vor einem persönlichen Besuch an, um freie Termine und die aktuellen Öffnungszeiten zu erfragen.",
+    "ticker": [
+      "Kompletter Service",
+      "Individueller Aufbau",
+      "Handgebaute Laufräder",
+      "Wachsen",
+      "Schutzfolie",
+      "Leihrad",
+      "Weltweiter Versand"
+    ]
+  },
+  "services": {
+    "eyebrow": "Leistungen",
+    "title": "Alles rund um Ihr Fahrrad",
+    "intro": "Vom Routine-Service bis zum kompletten Einzelstück. Nichts verlässt die Werkstatt, bevor es sich richtig anfühlt.",
+    "listTitle": "Was wir machen",
+    "listIntro": "Sieben Leistungen, eine Werkstatt. Rufen Sie an, wenn Sie unsicher sind — wir helfen gern weiter.",
+    "processTitle": "So wird aus dem Rad Ihr Rad",
+    "faqTitle": "Häufige Fragen",
+    "faqIntro": "Die Fragen, die wir am Telefon am häufigsten hören. Ihre ist nicht dabei? Rufen Sie uns an.",
+    "bookTitle": "Termin gewünscht?",
+    "bookText": "Am schnellsten geht es telefonisch. Wir klären, wann Sie das Rad bringen können und wie lange die Arbeit dauert."
+  },
+  "gallery": {
+    "eyebrow": "Galerie",
+    "title": "Aufbauten und Werkstattmomente",
+    "intro": "Individuelle Aufbauten, handgebaute Laufräder und der Werkstattalltag. Stöbern Sie nach Album oder sehen Sie alles.",
+    "all": "Alle",
+    "album": "Album",
+    "open": "Bild öffnen",
+    "close": "Schließen",
+    "next": "Nächstes Bild",
+    "previous": "Vorheriges Bild",
+    "empty": "Neue Fotos aus der Werkstatt sind unterwegs.",
+    "backToGallery": "Zurück zur Galerie",
+    "placeholderNotice": ""
+  },
+  "blog": {
+    "eyebrow": "Journal",
+    "title": "Geschichten aus der Werkstatt",
+    "intro": "Aufbauberichte, Werkstattgeheimnisse und praktische Tipps. Beiträge aktualisieren sich aus Markdown-Dateien.",
+    "featured": "Empfohlen",
+    "allPosts": "Alle Beiträge",
+    "search": "Im Journal suchen…",
+    "noResults": "Keine Treffer. Versuchen Sie ein anderes Wort.",
+    "tags": "Tags",
+    "toc": "Inhalt",
+    "back": "Zurück zum Blog",
+    "fallback": "Dieser Beitrag ist derzeit nur auf Ungarisch verfügbar.",
+    "share": "Teilen",
+    "related": "Weiterlesen",
+    "readPost": "Beitrag lesen",
+    "clearSearch": "Suche löschen",
+    "posts": "Beiträge"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Reden wir über das nächste Rad",
+    "intro": "Rufen Sie an, schreiben Sie, oder kommen Sie in die Werkstatt. Ein individueller Aufbau beginnt immer mit einem Gespräch.",
+    "callTitle": "Telefon",
+    "callText": "Der schnellste Weg. Rufen Sie an für Termine, Service oder eine kurze Beratung.",
+    "emailTitle": "E-Mail",
+    "emailText": "Schreiben Sie ein paar Zeilen zu Ihrem Rad und Ihren Wünschen. Fotos sind willkommen.",
+    "visitTitle": "Werkstatt",
+    "visitText": "Hegyalja u. 20, Pécs. Wenige Minuten vom Zentrum. Bitte vorher anrufen.",
+    "hoursTitle": "Öffnungszeiten",
+    "hoursText": "Wir haben keine festen Walk-in-Zeiten. Rufen Sie vorher an, dann vereinbaren wir einen Termin.",
+    "mapTitle": "Hier finden Sie uns",
+    "mapConsent": "Für die eingebettete Karte sind Cookies von Google erforderlich.",
+    "loadMap": "Karte laden",
+    "formTitle": "Schreiben Sie uns",
+    "formIntro": "Sagen Sie uns, was Sie brauchen. Wir antworten in der Regel innerhalb eines Werktags.",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon (optional)",
+    "service": "Wie können wir helfen?",
+    "servicePlaceholder": "Leistung auswählen",
+    "message": "Nachricht",
+    "messagePlaceholder": "Welches Rad haben Sie, und was braucht es?",
+    "consent": "Ich stimme zu, dass meine Daten zur Beantwortung meiner Anfrage verwendet werden.",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "success": "Danke! Wir haben Ihre Nachricht erhalten und melden uns bald.",
+    "error": "Etwas ist schiefgelaufen. Bitte rufen Sie uns an oder schreiben Sie direkt eine E-Mail.",
+    "fallback": "Wir öffnen Ihre E-Mail-App mit der ausgefüllten Nachricht.",
+    "required": "Pflichtfeld",
+    "invalidEmail": "Ungültige E-Mail-Adresse",
+    "responseTime": "Wir antworten in der Regel innerhalb eines Werktags.",
+    "orCall": "Lieber anrufen?",
+    "serviceQuestion": "Wie können wir helfen?",
+    "otherService": "Sonstiges / noch unklar"
+  },
+  "footer": {
+    "tagline": "Individuelle Fahrräder und kompletter Service in Pécs, in der Hegyalja utca.",
+    "explore": "Entdecken",
+    "workshop": "Werkstatt",
+    "legal": "Rechtliches",
+    "rights": "Alle Rechte vorbehalten.",
+    "built": "In Pécs gebaut, auf zwei Rädern.",
+    "newsletter": "Kein Newsletter. Nur gute Räder.",
+    "ctaEyebrow": "Nächster Schritt",
+    "ctaTitle": "Bring dein Rad vorbei.",
+    "ctaText": "Ruf uns an, dann finden wir einen Termin.",
+    "backToTop": "Nach oben"
+  },
+  "consent": {
+    "title": "Cookies & Messung",
+    "text": "Wir verwenden nur Cookies, die für den Betrieb der Website notwendig sind. Mit Ihrer Erlaubnis aktivieren wir außerdem anonyme Reichweitenmessung (Google Analytics), um die Seite zu verbessern.",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen",
+    "settings": "Einstellungen",
+    "analytics": "Analyse",
+    "analyticsText": "Google Analytics 4 — anonyme Nutzungsdaten.",
+    "necessary": "Notwendig",
+    "necessaryText": "Cookies, die für die Funktion der Website erforderlich sind.",
+    "save": "Einstellungen speichern",
+    "privacy": "Datenschutzerklärung"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Die Kette ist abgesprungen.",
+    "text": "Diese Seite wurde nicht gefunden. Fahren wir zurück in die Werkstatt oder schauen uns die Aufbauten an.",
+    "cta": "Zurück zur Startseite",
+    "gallery": "Galerie öffnen"
+  },
+  "gateway": {
+    "eyebrow": "Pécs · Ungarn",
+    "title": "Sprache wählen",
+    "text": "Individuelle Fahrräder und kompletter Service in Pécs.",
+    "detected": "Weiterleitung: {language}…",
+    "stay": "Auf dieser Seite bleiben",
+    "remember": "Wir merken uns Ihre Wahl.",
+    "suggested": "Empfohlen",
+    "enter": "Eintreten"
+  },
+  "legal": {
+    "privacyTitle": "Datenschutzerklärung",
+    "imprintTitle": "Impressum",
+    "updated": "Zuletzt aktualisiert: Oktober 2026",
+    "privacyIntro": "Diese Erklärung beschreibt, welche Daten wir bei der Nutzung dieser Website verarbeiten und welche Rechte Sie haben.",
+    "imprintIntro": "Angaben zum Betreiber dieser Website.",
+    "sections": {
+      "controller": "Verantwortlicher",
+      "data": "Verarbeitete Daten",
+      "analytics": "Analyse & Cookies",
+      "forms": "Kontaktformular",
+      "rights": "Ihre Rechte",
+      "hosting": "Hosting",
+      "content": "Inhalte",
+      "contact": "Kontakt"
+    }
+  },
+  "topbar": {
+    "note": "Bitte vorher anrufen",
+    "workshop": "Werkstatt",
+    "language": "Sprache"
+  }
+}

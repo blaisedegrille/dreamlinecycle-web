@@ -1,0 +1,71 @@
+{
+  "order": 3,
+  "title": {
+    "hu": "Részletek",
+    "en": "Details",
+    "de": "Details"
+  },
+  "description": {
+    "hu": "Agresszívumok, agyak, szalagok — amiken elakad a szem.",
+    "en": "Hubs, badges, tape — the bits that reward a closer look.",
+    "de": "Naben, Plaketten, Lenkerband — die Dinge, die den Blick lohnen."
+  },
+  "cover": "details-01-hub.jpg",
+  "placeholder": true,
+  "orderFiles": [
+    "details-01-hub.jpg",
+    "details-02-head-badge.jpg",
+    "details-03-chain-wax.jpg",
+    "details-04-bar-tape.jpg"
+  ],
+  "images": {
+    "details-01-hub.jpg": {
+      "alt": {
+        "hu": "Retró plakát kerékagy részletről",
+        "en": "Retro poster of a hub detail",
+        "de": "Retro-Poster eines Naben-Details"
+      },
+      "caption": {
+        "hu": "HUB — detail 01",
+        "en": "HUB — detail 01",
+        "de": "HUB — detail 01"
+      }
+    },
+    "details-02-head-badge.jpg": {
+      "alt": {
+        "hu": "Retró plakát kerékpár fejjelvényről",
+        "en": "Retro poster of a bicycle head badge",
+        "de": "Retro-Poster eines Steuerkopfschilds"
+      },
+      "caption": {
+        "hu": "HEAD BADGE — detail 02",
+        "en": "HEAD BADGE — detail 02",
+        "de": "HEAD BADGE — detail 02"
+      }
+    },
+    "details-03-chain-wax.jpg": {
+      "alt": {
+        "hu": "Retró plakát láncwaxolásról",
+        "en": "Retro poster about chain waxing",
+        "de": "Retro-Poster über Kettenwachs"
+      },
+      "caption": {
+        "hu": "CHAIN WAX — detail 03",
+        "en": "CHAIN WAX — detail 03",
+        "de": "CHAIN WAX — detail 03"
+      }
+    },
+    "details-04-bar-tape.jpg": {
+      "alt": {
+        "hu": "Retró plakát kormányszalagról",
+        "en": "Retro poster of handlebar tape",
+        "de": "Retro-Poster von Lenkerband"
+      },
+      "caption": {
+        "hu": "BAR TAPE — detail 04",
+        "en": "BAR TAPE — detail 04",
+        "de": "BAR TAPE — detail 04"
+      }
+    }
+  }
+}

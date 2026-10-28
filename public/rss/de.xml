@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Dreamline Cycle — Werkstattjournal</title>
+    <link>https://www.dreamlinecycle.hu/de/blog/</link>
+    <description>Aufbauberichte, Werkstattnotizen und praktische Tipps aus der Dreamline Cycle Werkstatt in Pécs.</description>
+    <language>de-DE</language>
+    <lastBuildDate>Invalid Date</lastBuildDate>
+    <atom:link href="https://www.dreamlinecycle.hu/rss/de.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Warum ein gutes Laufrad von Hand gebaut wird</title>
+      <link>https://www.dreamlinecycle.hu/de/blog/handgebaute-laufraeder/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/de/blog/handgebaute-laufraeder/</guid>
+      <pubDate>Invalid Date</pubDate>
+      
+      <description>Maschinell eingespeichte Laufräder sind schnell gebaut. Handgebaute sind präzise. Was ein Laufrad wirklich haltbar macht und wann sich eines lohnt.</description>
+      <category>laufräder</category>
+      <category>werkstatt</category>
+      <category>aufbau</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/hand-built-wheels.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Winterservice: die Acht-Punkte-Checkliste</title>
+      <link>https://www.dreamlinecycle.hu/de/blog/winter-checkliste/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/de/blog/winter-checkliste/</guid>
+      <pubDate>Invalid Date</pubDate>
+      <dc:modified>Tue Oct 20</dc:modified>
+      <description>Die kalten Monate sind nicht der Feind Ihres Fahrrads, wenn Sie es vorbereiten. Eine einfache Winter-Checkliste, die Sie auch zu Hause durchgehen können.</description>
+      <category>service</category>
+      <category>wartung</category>
+      <category>winter</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/winter-service.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Ein individueller Aufbau, Schritt für Schritt</title>
+      <link>https://www.dreamlinecycle.hu/de/blog/individueller-aufbau/</link>
+      <guid isPermaLink="true">https://www.dreamlinecycle.hu/de/blog/individueller-aufbau/</guid>
+      <pubDate>Invalid Date</pubDate>
+      
+      <description>Wie wird aus einer Idee ein Fahrrad? Wir gehen den Weg vom ersten Gespräch bis zur Übergabe durch und zeigen, was Sie vorbereiten können.</description>
+      <category>individueller aufbau</category>
+      <category>werkstatt</category>
+      <category>ablauf</category>
+      <enclosure url="https://www.dreamlinecycle.hu/generated/blog/custom-build-process.jpg" type="image/jpeg" length="0"/>
+    </item>
+  </channel>
+</rss>

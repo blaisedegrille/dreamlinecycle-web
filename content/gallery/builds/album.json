@@ -1,0 +1,97 @@
+{
+  "order": 1,
+  "title": {
+    "hu": "Építések",
+    "en": "Builds",
+    "de": "Aufbauten"
+  },
+  "description": {
+    "hu": "Egyedi kerékpárok, a vázlattól az első tekerésig.",
+    "en": "Custom bicycles, from first sketch to first ride.",
+    "de": "Individuelle Fahrräder, vom ersten Entwurf bis zur ersten Fahrt."
+  },
+  "cover": "builds-01-steel-road.jpg",
+  "placeholder": true,
+  "orderFiles": [
+    "builds-01-steel-road.jpg",
+    "builds-02-gravel-one.jpg",
+    "builds-03-city-custom.jpg",
+    "builds-04-trail-29.jpg",
+    "builds-05-randonneur.jpg",
+    "builds-06-winter-trainer.jpg"
+  ],
+  "images": {
+    "builds-01-steel-road.jpg": {
+      "alt": {
+        "hu": "Retró plakát acél országúti kerékpárról",
+        "en": "Retro poster of a steel road bicycle",
+        "de": "Retro-Poster eines Stahl-Rennrads"
+      },
+      "caption": {
+        "hu": "STEEL ROAD — build 001",
+        "en": "STEEL ROAD — build 001",
+        "de": "STEEL ROAD — build 001"
+      }
+    },
+    "builds-02-gravel-one.jpg": {
+      "alt": {
+        "hu": "Retró plakát gravel kerékpárról",
+        "en": "Retro poster of a gravel bicycle",
+        "de": "Retro-Poster eines Gravelbikes"
+      },
+      "caption": {
+        "hu": "GRAVEL ONE — build 002",
+        "en": "GRAVEL ONE — build 002",
+        "de": "GRAVEL ONE — build 002"
+      }
+    },
+    "builds-03-city-custom.jpg": {
+      "alt": {
+        "hu": "Retró plakát városi kerékpárról",
+        "en": "Retro poster of a city bicycle",
+        "de": "Retro-Poster eines Stadtrads"
+      },
+      "caption": {
+        "hu": "CITY CUSTOM — build 003",
+        "en": "CITY CUSTOM — build 003",
+        "de": "CITY CUSTOM — build 003"
+      }
+    },
+    "builds-04-trail-29.jpg": {
+      "alt": {
+        "hu": "Retró plakát hegyi kerékpárról",
+        "en": "Retro poster of a mountain bike",
+        "de": "Retro-Poster eines Mountainbikes"
+      },
+      "caption": {
+        "hu": "TRAIL 29 — build 004",
+        "en": "TRAIL 29 — build 004",
+        "de": "TRAIL 29 — build 004"
+      }
+    },
+    "builds-05-randonneur.jpg": {
+      "alt": {
+        "hu": "Retró plakát randonneur kerékpárról",
+        "en": "Retro poster of a randonneur bicycle",
+        "de": "Retro-Poster eines Randonneur-Rads"
+      },
+      "caption": {
+        "hu": "RANDONNEUR — build 005",
+        "en": "RANDONNEUR — build 005",
+        "de": "RANDONNEUR — build 005"
+      }
+    },
+    "builds-06-winter-trainer.jpg": {
+      "alt": {
+        "hu": "Retró plakát téli, sárvédős kerékpárról",
+        "en": "Retro poster of a winter bicycle with fenders",
+        "de": "Retro-Poster eines Winterrads mit Schutzblechen"
+      },
+      "caption": {
+        "hu": "WINTER TRAINER — build 006",
+        "en": "WINTER TRAINER — build 006",
+        "de": "WINTER TRAINER — build 006"
+      }
+    }
+  }
+}
