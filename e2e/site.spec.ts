@@ -77,6 +77,7 @@ test("large footer wordmark aligns to the footer content gutter", async ({ page 
   const wordmark = page.locator(".footer-wordmark");
   await expect(wordmark).toHaveCSS("text-align", "left");
   await expect(wordmark).toHaveCSS("padding-left", "0px");
+  await expect(wordmark).toHaveCSS("border-bottom-width", "1px");
   await expect(wordmark.locator("..")).toHaveClass(/\bwrap\b/);
   await expect(wordmark.locator(":scope > span")).toHaveCount(2);
 });
