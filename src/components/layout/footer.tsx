@@ -12,6 +12,7 @@ import { navItems, site } from "@/content/site";
 import type { Locale } from "@/i18n/routing";
 import { Chainring, Logo } from "@/components/brand/logo";
 import { CookieSettings } from "@/components/layout/cookie-settings";
+import { MapEmbed } from "@/components/layout/map-embed";
 import {
   FacebookIcon,
   GoogleIcon,
@@ -172,6 +173,9 @@ export async function Footer({ locale }: { locale: Locale }) {
               {topbar("note")}
             </li>
           </ul>
+          <div className="mt-5">
+            <MapEmbed compact />
+          </div>
         </div>
 
         <div>
