@@ -62,6 +62,7 @@ test("contact map and directions use the supplied Google Maps pin", async ({ pag
 test("footer contains a click-to-load Google Maps widget", async ({ page }) => {
   await page.goto("/en/");
   const footer = page.locator("footer");
+  await expect(footer.getByRole("heading", { name: "Find us" })).toBeVisible();
   await expect(footer.getByRole("button", { name: "Load map" })).toBeVisible();
   await footer.getByRole("button", { name: "Load map" }).click();
   await expect(footer.locator('iframe[title="Find us"]')).toHaveAttribute(

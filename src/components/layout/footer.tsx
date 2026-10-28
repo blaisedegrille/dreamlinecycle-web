@@ -25,9 +25,22 @@ export async function Footer({ locale }: { locale: Locale }) {
   const common = await getTranslations({ locale, namespace: "common" });
   const legal = await getTranslations({ locale, namespace: "legal" });
   const topbar = await getTranslations({ locale, namespace: "topbar" });
+  const contact = await getTranslations({ locale, namespace: "contact" });
 
   return (
     <footer className="border-t-2 border-ink bg-ink text-paper">
+      <section className="border-b border-paper/15 px-4 py-10 sm:py-14 lg:py-16">
+        <div className="mx-auto max-w-5xl">
+          <p className="eyebrow text-center text-paper/45">{t("workshop")}</p>
+          <h2 className="mt-2 text-center font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-none uppercase">
+            {contact("mapTitle")}
+          </h2>
+          <div className="mt-6 sm:mt-8">
+            <MapEmbed size="footer" />
+          </div>
+        </div>
+      </section>
+
       <div className="bg-race text-paper">
         <div className="wrap flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:py-10">
           <div>
@@ -173,9 +186,6 @@ export async function Footer({ locale }: { locale: Locale }) {
               {topbar("note")}
             </li>
           </ul>
-          <div className="mt-5">
-            <MapEmbed compact />
-          </div>
         </div>
 
         <div>
