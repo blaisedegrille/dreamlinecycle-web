@@ -45,6 +45,20 @@ test("contact form fields are labeled and the page has no critical axe violation
   expect(critical).toEqual([]);
 });
 
+test("contact map and directions use the supplied Google Maps pin", async ({ page }) => {
+  await page.goto("/en/contact/");
+
+  await expect(
+    page.locator('a[href="https://maps.app.goo.gl/wW3Pjgz7AAeWeD81A"]').first(),
+  ).toBeVisible();
+
+  await page.getByRole("button", { name: "Load map" }).click();
+  await expect(page.locator('iframe[title="Find us"]')).toHaveAttribute(
+    "src",
+    "https://www.google.com/maps?q=46.082431,18.2419997&z=17&output=embed",
+  );
+});
+
 test("unknown paths return the generated 404 page", async ({ page }) => {
   const response = await page.goto("/not-a-real-page/");
   expect(response?.status()).toBe(404);

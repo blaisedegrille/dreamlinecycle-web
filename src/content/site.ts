@@ -12,10 +12,9 @@ export const site = {
     postalCode: "7625",
     country: "HU",
   },
-  mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Dreamline+Cycle+P%C3%A9cs+Hegyalja+u.+20",
+  mapsUrl: "https://maps.app.goo.gl/wW3Pjgz7AAeWeD81A",
   mapsEmbed:
-    "https://www.google.com/maps?q=Dreamline+Cycle,+Hegyalja+u.+20,+P%C3%A9cs,+7625&output=embed",
+    "https://www.google.com/maps?q=46.082431,18.2419997&z=17&output=embed",
   socials: {
     facebook: "https://www.facebook.com/dreamlinecycle",
     instagram: "https://www.instagram.com/dreamline_cycle/",
