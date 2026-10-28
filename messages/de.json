@@ -65,7 +65,8 @@
     "address": "Adresse",
     "follow": "Folge uns",
     "openInMaps": "In Maps öffnen",
-    "loading": "Wird geladen…"
+    "loading": "Wird geladen…",
+    "close": "Schließen"
   },
   "home": {
     "eyebrow": "Pécs · Fahrradservice & individuelle Aufbauten",
@@ -161,7 +162,9 @@
     "related": "Weiterlesen",
     "readPost": "Beitrag lesen",
     "clearSearch": "Suche löschen",
-    "posts": "Beiträge"
+    "posts": "Beiträge",
+    "copyLink": "Link kopieren",
+    "linkCopied": "Link kopiert"
   },
   "contact": {
     "eyebrow": "Kontakt",
@@ -198,7 +201,15 @@
     "responseTime": "Wir antworten in der Regel innerhalb eines Werktags.",
     "orCall": "Lieber anrufen?",
     "serviceQuestion": "Wie können wir helfen?",
-    "otherService": "Sonstiges / noch unklar"
+    "otherService": "Sonstiges / noch unklar",
+    "messageShort": "Bitte schreiben Sie ein paar Worte.",
+    "consentRequired": "Bitte akzeptieren Sie die Datenschutzhinweise.",
+    "subject": "Anfrage über die Website",
+    "requiredHint": "Mit * markierte Felder sind Pflichtfelder.",
+    "namePlaceholder": "Ihr Name",
+    "emailPlaceholder": "name@beispiel.de",
+    "phonePlaceholder": "+36 …",
+    "turnstileRequired": "Bitte bestätigen Sie, dass Sie kein Roboter sind."
   },
   "footer": {
     "tagline": "Individuelle Fahrräder und kompletter Service in Pécs, in der Hegyalja utca.",

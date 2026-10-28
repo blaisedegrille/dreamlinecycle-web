@@ -1,10 +1,43 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { localeNames, locales, type Locale } from "@/i18n/routing";
 import { gatewayCopy } from "@/content/gateway";
 import { cn } from "@/lib/format";
+
+const LOCALE_KEY = "dlc-locale";
+
+function isLocale(value: string | null | undefined): value is Locale {
+  return Boolean(value) && locales.includes(value as Locale);
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener("languagechange", callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener("languagechange", callback);
+  };
+}
+
+/** Previously chosen locale, else the first browser language we support. */
+function getSuggestedLocale(): Locale | null {
+  try {
+    const stored = window.localStorage.getItem(LOCALE_KEY);
+    if (isLocale(stored)) return stored;
+  } catch {
+    // Storage may be unavailable; fall through to browser languages.
+  }
+  const languages = navigator.languages ?? [navigator.language];
+  for (const language of languages) {
+    const prefix = language.toLowerCase().slice(0, 2);
+    if (isLocale(prefix)) return prefix;
+  }
+  return null;
+}
+
+const getServerSuggestion = () => null;
 
 const accents: Record<Locale, string> = {
   hu: "bg-race",
@@ -19,27 +52,11 @@ const codes: Record<Locale, string> = {
 };
 
 export function LanguageGateway() {
-  const [suggested, setSuggested] = useState<Locale | null>(null);
-
-  useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem("dlc-locale");
-      if (stored && locales.includes(stored as Locale)) {
-        setSuggested(stored as Locale);
-        return;
-      }
-    } catch {
-      // ignore storage errors
-    }
-    const languages = navigator.languages ?? [navigator.language];
-    for (const language of languages) {
-      const prefix = language.toLowerCase().slice(0, 2);
-      if (locales.includes(prefix as Locale)) {
-        setSuggested(prefix as Locale);
-        return;
-      }
-    }
-  }, []);
+  const suggested = useSyncExternalStore(
+    subscribe,
+    getSuggestedLocale,
+    getServerSuggestion,
+  );
 
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -53,7 +70,7 @@ export function LanguageGateway() {
             lang={locale}
             onClick={() => {
               try {
-                window.localStorage.setItem("dlc-locale", locale);
+                window.localStorage.setItem(LOCALE_KEY, locale);
               } catch {
                 // ignore storage errors
               }

@@ -76,10 +76,6 @@ function targetWidthsFor(width) {
   return [...new Set(widths)].sort((a, b) => a - b);
 }
 
-function publicPath(album, file) {
-  return `/generated/gallery/${album}/${file}`;
-}
-
 async function processImage({ album, file, source, cache, manifestImages }) {
   const buffer = fs.readFileSync(source);
   const hash = crypto.createHash("sha256").update(buffer).digest("hex").slice(0, 12);

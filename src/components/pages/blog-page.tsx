@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { ArrowUpRight, Rss } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
@@ -7,13 +7,10 @@ import type { Locale } from "@/i18n/routing";
 import { PageHero } from "@/components/ui/page-hero";
 import { BlogList } from "@/components/blog/blog-list";
 
-type PageProps = { params: Promise<{ locale: string }> };
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale: locale as Locale, namespace: "meta" });
+export async function blogMetadata(locale: Locale): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "meta" });
   return buildMetadata({
-    locale: locale as Locale,
+    locale,
     href: "/blog",
     title: t("blog.title"),
     description: t("blog.description"),
@@ -21,11 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   });
 }
 
-export default async function BlogPage({ params }: PageProps) {
-  const { locale: rawLocale } = await params;
-  const locale = rawLocale as Locale;
-  setRequestLocale(locale);
-
+export async function BlogPageContent({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "blog" });
   const posts = getAllPosts(locale);
 

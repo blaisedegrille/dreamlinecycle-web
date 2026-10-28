@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { useTranslations } from "next-intl";
 import { Cookie } from "lucide-react";
@@ -8,32 +8,38 @@ import { Link } from "@/i18n/navigation";
 import { site } from "@/content/site";
 import {
   OPEN_CONSENT_EVENT,
-  readConsent,
+  getConsentSnapshot,
+  parseConsent,
+  subscribeConsent,
   updateAnalyticsConsent,
   writeConsent,
-  type ConsentChoice,
 } from "@/lib/consent";
 import { cn } from "@/lib/format";
+
+// Server snapshot is a sentinel so the banner stays hidden until hydration,
+// which avoids a flash for visitors who already decided.
+const SERVER_SNAPSHOT = "__server__";
+const getServerSnapshot = () => SERVER_SNAPSHOT;
 
 export function ConsentBanner() {
   const t = useTranslations("consent");
   const common = useTranslations("common");
-  const [choice, setChoice] = useState<ConsentChoice | null>(null);
-  const [ready, setReady] = useState(false);
+  const snapshot = useSyncExternalStore(
+    subscribeConsent,
+    getConsentSnapshot,
+    getServerSnapshot,
+  );
+  const ready = snapshot !== SERVER_SNAPSHOT;
+  const choice = useMemo(
+    () => (ready ? parseConsent(snapshot) : null),
+    [ready, snapshot],
+  );
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [draftAnalytics, setDraftAnalytics] = useState(false);
+  const [draftAnalytics, setDraftAnalytics] = useState<boolean | null>(null);
+  const draft = draftAnalytics ?? choice?.analytics ?? false;
 
   useEffect(() => {
-    const stored = readConsent();
-    setChoice(stored);
-    setDraftAnalytics(stored?.analytics ?? false);
-    setReady(true);
-
-    const onOpen = () => {
-      const current = readConsent();
-      setDraftAnalytics(current?.analytics ?? false);
-      setSettingsOpen(true);
-    };
+    const onOpen = () => setSettingsOpen(true);
     window.addEventListener(OPEN_CONSENT_EVENT, onOpen);
     return () => window.removeEventListener(OPEN_CONSENT_EVENT, onOpen);
   }, []);
@@ -43,10 +49,9 @@ export function ConsentBanner() {
   }, [choice]);
 
   const decide = (analytics: boolean) => {
-    const next = writeConsent(analytics);
+    writeConsent(analytics);
     updateAnalyticsConsent(analytics);
-    setChoice(next);
-    setDraftAnalytics(analytics);
+    setDraftAnalytics(null);
     setSettingsOpen(false);
   };
 
@@ -107,7 +112,7 @@ export function ConsentBanner() {
                 >
                   <input
                     type="checkbox"
-                    checked={draftAnalytics}
+                    checked={draft}
                     disabled={!analyticsEnabled}
                     onChange={(event) => setDraftAnalytics(event.target.checked)}
                     className="mt-0.5 h-4 w-4 accent-[var(--color-mint)]"
@@ -136,7 +141,7 @@ export function ConsentBanner() {
             {settingsOpen ? (
               <button
                 type="button"
-                onClick={() => decide(draftAnalytics)}
+                onClick={() => decide(draft)}
                 className="btn btn-ink"
               >
                 {t("save")}
@@ -169,7 +174,10 @@ export function ConsentBanner() {
             <button
               type="button"
               onClick={() => {
-                if (choice) setSettingsOpen(false);
+                if (choice) {
+                  setDraftAnalytics(null);
+                  setSettingsOpen(false);
+                }
               }}
               className={cn(
                 "btn btn-ghost ml-auto text-ink/60",

@@ -86,6 +86,12 @@ export type Post = PostMeta & {
   availableLocales: Locale[];
 };
 
+export type PostHeading = {
+  id: string;
+  text: string;
+  level: 2 | 3;
+};
+
 export type LegalSection = {
   heading: Localized;
   body: Localized<string[]>;

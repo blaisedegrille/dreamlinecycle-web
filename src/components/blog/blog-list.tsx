@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { ArrowUpRight, Clock, Search, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -116,11 +117,12 @@ export function BlogList({
           >
             <div className="relative aspect-[16/10] overflow-hidden border-b-2 border-ink bg-paper-deep lg:aspect-auto lg:border-r-2 lg:border-b-0">
               {featured.cover ? (
-                <img
+                <Image
                   src={featured.cover}
                   alt={featured.coverAlt || featured.title}
                   width={1600}
                   height={1000}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               ) : null}

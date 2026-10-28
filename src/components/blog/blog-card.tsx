@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight, Clock } from "lucide-react";
 import type { Locale } from "@/i18n/routing";
 import type { PostMeta } from "@/lib/types";
@@ -31,11 +32,12 @@ export function BlogCard({
           )}
         >
           {post.cover ? (
-            <img
+            <Image
               src={post.cover}
               alt={post.coverAlt || post.title}
               width={1600}
               height={1000}
+              sizes={featured ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 640px) 100vw, 50vw"}
               loading={featured ? "eager" : "lazy"}
               className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]"
             />

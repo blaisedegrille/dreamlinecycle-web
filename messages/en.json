@@ -65,7 +65,8 @@
     "address": "Address",
     "follow": "Follow us",
     "openInMaps": "Open in Maps",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "close": "Close"
   },
   "home": {
     "eyebrow": "Pécs · Bicycle service & custom builds",
@@ -161,7 +162,9 @@
     "related": "Related reading",
     "readPost": "Read the post",
     "clearSearch": "Clear search",
-    "posts": "posts"
+    "posts": "posts",
+    "copyLink": "Copy link",
+    "linkCopied": "Link copied"
   },
   "contact": {
     "eyebrow": "Contact",
@@ -198,7 +201,15 @@
     "responseTime": "We usually reply within one working day.",
     "orCall": "Would rather call?",
     "serviceQuestion": "How can we help?",
-    "otherService": "Other / not sure yet"
+    "otherService": "Other / not sure yet",
+    "messageShort": "Please write a few words.",
+    "consentRequired": "Please accept the privacy notice.",
+    "subject": "Website enquiry",
+    "requiredHint": "Fields marked * are required.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "you@example.com",
+    "phonePlaceholder": "+36 …",
+    "turnstileRequired": "Please confirm you are not a robot."
   },
   "footer": {
     "tagline": "Custom bicycles and full-service care in Pécs, on Hegyalja utca.",

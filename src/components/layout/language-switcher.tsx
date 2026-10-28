@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState, type ComponentProps } from "react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { localeNames, localeShort, locales, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/format";
 
@@ -24,13 +24,23 @@ export function LanguageSwitcher({
   const pathname = usePathname();
   const params = useParams();
   const [open, setOpen] = useState(false);
+  const [openedAt, setOpenedAt] = useState(pathname);
   const ref = useRef<HTMLDivElement>(null);
 
-  const href = { pathname, params } as unknown as LinkHref;
+  const segments = Array.isArray(params.slug) ? params.slug : [];
+  const href = (
+    pathname === "/gallery/[album]"
+      ? { pathname, params: { album: segments.at(-1) } }
+      : pathname === "/blog/[slug]"
+        ? { pathname, params: { slug: segments.at(-1) } }
+        : pathname
+  ) as LinkHref;
 
-  useEffect(() => {
+  // Close the menu when the route changes underneath it (e.g. back button).
+  if (openedAt !== pathname) {
+    setOpenedAt(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     if (!open) return;

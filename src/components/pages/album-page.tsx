@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Link, getPathname } from "@/i18n/navigation";
@@ -11,34 +11,27 @@ import { GalleryBrowser } from "@/components/gallery/gallery-browser";
 import { GalleryPicture } from "@/components/ui/gallery-picture";
 import { JsonLd } from "@/components/seo/json-ld";
 
-type PageProps = { params: Promise<{ locale: string; album: string }> };
-
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return getAlbums().map((album) => ({ album: album.slug }));
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale, album: slug } = await params;
+export async function albumMetadata(locale: Locale, slug: string): Promise<Metadata> {
   const album = getAlbum(slug);
   if (!album) return {};
 
   const cover = getAlbumCover(album);
   return buildMetadata({
-    locale: locale as Locale,
+    locale,
     href: { pathname: "/gallery/[album]", params: { album: slug } },
-    title: album.title[locale as Locale],
-    description: album.description[locale as Locale],
+    title: album.title[locale],
+    description: album.description[locale],
     image: cover?.src.jpg,
   });
 }
 
-export default async function AlbumPage({ params }: PageProps) {
-  const { locale: rawLocale, album: slug } = await params;
-  const locale = rawLocale as Locale;
-  setRequestLocale(locale);
-
+export async function AlbumPageContent({
+  locale,
+  slug,
+}: {
+  locale: Locale;
+  slug: string;
+}) {
   const album = getAlbum(slug);
   if (!album) notFound();
 

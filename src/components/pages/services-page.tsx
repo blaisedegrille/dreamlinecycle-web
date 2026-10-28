@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { ArrowUpRight, Phone, Plus } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata } from "@/lib/seo";
@@ -11,13 +11,10 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { ServiceCard } from "@/components/services/service-card";
 import { JsonLd } from "@/components/seo/json-ld";
 
-type PageProps = { params: Promise<{ locale: string }> };
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale: locale as Locale, namespace: "meta" });
+export async function servicesMetadata(locale: Locale): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "meta" });
   return buildMetadata({
-    locale: locale as Locale,
+    locale,
     href: "/services",
     title: t("services.title"),
     description: t("services.description"),
@@ -25,11 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   });
 }
 
-export default async function ServicesPage({ params }: PageProps) {
-  const { locale: rawLocale } = await params;
-  const locale = rawLocale as Locale;
-  setRequestLocale(locale);
-
+export async function ServicesPageContent({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "services" });
   const common = await getTranslations({ locale, namespace: "common" });
   const hero = await getTranslations({ locale, namespace: "home" });

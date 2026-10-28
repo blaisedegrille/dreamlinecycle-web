@@ -65,7 +65,8 @@
     "address": "Cím",
     "follow": "Kövess minket",
     "openInMaps": "Megnyitás térképen",
-    "loading": "Betöltés…"
+    "loading": "Betöltés…",
+    "close": "Bezárás"
   },
   "home": {
     "eyebrow": "Pécs · Kerékpár szerviz és egyedi építés",
@@ -161,7 +162,9 @@
     "related": "Kapcsolódó írások",
     "readPost": "Írás megnyitása",
     "clearSearch": "Keresés törlése",
-    "posts": "bejegyzés"
+    "posts": "bejegyzés",
+    "copyLink": "Hivatkozás másolása",
+    "linkCopied": "Hivatkozás másolva"
   },
   "contact": {
     "eyebrow": "Kapcsolat",
@@ -198,7 +201,15 @@
     "responseTime": "Általában 1 munkanapon belül válaszolunk.",
     "orCall": "Inkább hívnál minket?",
     "serviceQuestion": "Miben segíthetünk?",
-    "otherService": "Egyéb / még nem tudom"
+    "otherService": "Egyéb / még nem tudom",
+    "messageShort": "Írj legalább néhány szót.",
+    "consentRequired": "Kérünk, fogadd el az adatkezelési tájékoztatót.",
+    "subject": "Megkeresés a weboldalról",
+    "requiredHint": "A * jelölt mezők kötelezők.",
+    "namePlaceholder": "Neved",
+    "emailPlaceholder": "nev@example.com",
+    "phonePlaceholder": "+36 …",
+    "turnstileRequired": "Kérünk, igazold, hogy nem vagy robot."
   },
   "footer": {
     "tagline": "Egyedi kerékpárok és teljeskörű szerviz Pécsen, a Hegyalja utcában.",

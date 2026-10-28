@@ -1,4 +1,4 @@
-import type { LegalSection, Localized, Service, Step, FaqItem } from "@/lib/types";
+import type { LegalSection, Service, Step, FaqItem } from "@/lib/types";
 
 export const services: Service[] = [
   {
@@ -384,11 +384,14 @@ export const legalSections: LegalSection[] = [
       ],
     },
   },
+];
+
+export const imprintSections: LegalSection[] = [
   {
     heading: {
-      hu: "Impresszum",
-      en: "Imprint",
-      de: "Impressum",
+      hu: "Üzemeltető és tartalom",
+      en: "Operator & content",
+      de: "Betreiber & Inhalte",
     },
     body: {
       hu: [

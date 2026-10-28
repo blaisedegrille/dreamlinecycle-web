@@ -8,10 +8,42 @@ export type ConsentChoice = {
 };
 
 export function readConsent(): ConsentChoice | null {
+  return parseConsent(getConsentSnapshot());
+}
+
+/**
+ * Subscription for `useSyncExternalStore`: re-reads consent whenever this tab
+ * writes it or another tab changes localStorage.
+ */
+export function subscribeConsent(callback: () => void): () => void {
+  if (typeof window === "undefined") return () => {};
+  const onStorage = (event: StorageEvent) => {
+    if (event.key === null || event.key === CONSENT_KEY) callback();
+  };
+  window.addEventListener(CONSENT_EVENT, callback);
+  window.addEventListener("storage", onStorage);
+  return () => {
+    window.removeEventListener(CONSENT_EVENT, callback);
+    window.removeEventListener("storage", onStorage);
+  };
+}
+
+/**
+ * Snapshot for `useSyncExternalStore`. Returns the raw string so React can
+ * compare snapshots by value; parse with `parseConsent`.
+ */
+export function getConsentSnapshot(): string | null {
   if (typeof window === "undefined") return null;
   try {
-    const raw = window.localStorage.getItem(CONSENT_KEY);
-    if (!raw) return null;
+    return window.localStorage.getItem(CONSENT_KEY);
+  } catch {
+    return null;
+  }
+}
+
+export function parseConsent(raw: string | null): ConsentChoice | null {
+  if (!raw) return null;
+  try {
     const parsed = JSON.parse(raw) as Partial<ConsentChoice>;
     if (typeof parsed.analytics !== "boolean") return null;
     return {

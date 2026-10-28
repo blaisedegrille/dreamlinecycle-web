@@ -38,6 +38,10 @@ export function GalleryBrowser({
     : undefined;
 
   const close = useCallback(() => setActive(null), []);
+  const changeFilter = (value: string) => {
+    setFilter(value);
+    setActive(null);
+  };
   const next = useCallback(() => {
     setActive((value) =>
       value === null ? value : (value + 1) % Math.max(filtered.length, 1),
@@ -74,10 +78,6 @@ export function GalleryBrowser({
     };
   }, [active, close, next, previous]);
 
-  useEffect(() => {
-    setActive(null);
-  }, [filter]);
-
   if (images.length === 0) {
     return (
       <div className="border-2 border-dashed border-ink/30 bg-cream/60 px-6 py-16 text-center">
@@ -92,7 +92,7 @@ export function GalleryBrowser({
         <div className="flex flex-wrap gap-2">
           <button
             type="button"
-            onClick={() => setFilter("all")}
+            onClick={() => changeFilter("all")}
             aria-pressed={filter === "all"}
             className={cn(
               "border-2 border-ink px-3 py-2 font-mono text-[10px] tracking-[0.14em] uppercase transition-colors",
@@ -108,7 +108,7 @@ export function GalleryBrowser({
             <button
               key={album.slug}
               type="button"
-              onClick={() => setFilter(album.slug)}
+              onClick={() => changeFilter(album.slug)}
               aria-pressed={filter === album.slug}
               className={cn(
                 "border-2 border-ink px-3 py-2 font-mono text-[10px] tracking-[0.14em] uppercase transition-colors",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowUpRight, Phone } from "lucide-react";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/content/site";
@@ -25,9 +26,9 @@ export default function GlobalNotFound() {
 
           <header className="relative z-10 border-b-2 border-ink/10">
             <div className="wrap flex h-16 items-center justify-between gap-4">
-              <a href="/hu/" aria-label={site.name}>
+              <Link href="/hu/" aria-label={site.name}>
                 <Logo markClassName="h-10 w-10" />
-              </a>
+              </Link>
               <a
                 href={site.phoneHref}
                 className="flex items-center gap-1.5 border-2 border-ink px-2.5 py-1.5 font-mono text-[10px] tracking-[0.14em] uppercase transition-colors hover:bg-ink hover:text-paper"
@@ -54,14 +55,14 @@ export default function GlobalNotFound() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <a href="/hu/" className="btn btn-primary">
+                  <Link href="/hu/" className="btn btn-primary">
                     Vissza a főoldalra
                     <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={2.2} />
-                  </a>
-                  <a href="/galeria/" className="btn btn-outline">
+                  </Link>
+                  <Link href="/hu/galeria/" className="btn btn-outline">
                     Galéria
                     <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={2.2} />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-10 flex flex-wrap gap-2">
