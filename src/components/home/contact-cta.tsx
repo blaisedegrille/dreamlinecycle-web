@@ -37,7 +37,7 @@ export async function HomeContact({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <section className="relative overflow-hidden border-b-2 border-ink bg-paper-deep" data-reveal>
+    <section className="relative overflow-hidden border-b-2 border-ink bg-paper-deep">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-16 -bottom-20 font-display text-[18rem] leading-none tracking-[-0.06em] text-ink/[0.045] uppercase select-none sm:text-[24rem]"

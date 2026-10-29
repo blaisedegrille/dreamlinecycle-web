@@ -4,7 +4,6 @@ import { useSyncExternalStore } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { localeNames, locales, type Locale } from "@/i18n/routing";
 import { gatewayCopy } from "@/content/gateway";
-import { cn } from "@/lib/format";
 import { withBasePath } from "@/lib/paths";
 
 const LOCALE_KEY = "dlc-locale";
@@ -40,12 +39,6 @@ function getSuggestedLocale(): Locale | null {
 
 const getServerSuggestion = () => null;
 
-const accents: Record<Locale, string> = {
-  hu: "bg-race",
-  en: "bg-sun",
-  de: "bg-cobalt",
-};
-
 const codes: Record<Locale, string> = {
   hu: "HU",
   en: "EN",
@@ -61,7 +54,7 @@ export function LanguageGateway() {
 
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-      {locales.map((locale, index) => {
+      {locales.map((locale) => {
         const copy = gatewayCopy[locale];
         return (
           <a
@@ -76,30 +69,26 @@ export function LanguageGateway() {
                 // ignore storage errors
               }
             }}
-            className={cn(
-              "group relative flex min-w-[13rem] flex-1 flex-col justify-between gap-8 border-2 border-ink bg-paper p-5 text-ink shadow-[6px_6px_0_var(--color-ink)] transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-[10px_10px_0_var(--color-ink)] sm:min-h-[15rem]",
-              index === 1 && "sm:mt-5",
-              index === 2 && "sm:mt-10",
-            )}
+            className="group relative flex min-w-[10rem] flex-1 flex-col justify-between gap-6 border border-ink/20 bg-cream p-4 text-ink transition-colors hover:border-race sm:min-h-[11rem] sm:p-5"
           >
             <span
               aria-hidden="true"
-              className={cn("absolute inset-x-0 top-0 h-2.5", accents[locale])}
+              className="absolute inset-x-0 top-0 h-0.5 bg-race"
             />
             {suggested === locale ? (
-              <span className="absolute top-3 right-3 border-2 border-ink bg-sun px-2 py-1 font-mono text-[8px] tracking-[0.14em] uppercase">
+              <span className="absolute top-3 right-3 border border-ink/20 bg-paper-deep px-2 py-1 font-mono text-[8px] tracking-[0.1em] uppercase">
                 {copy.suggested}
               </span>
             ) : null}
             <div className="pt-2">
-              <p className="display text-[3.4rem] leading-[0.8]">
+              <p className="font-display text-[3rem] leading-[0.9] font-bold tracking-[-0.06em]">
                 {codes[locale]}
               </p>
-              <p className="mt-2 font-mono text-[10px] tracking-[0.16em] uppercase text-ink/55">
+              <p className="mt-2 font-mono text-[9px] tracking-[0.1em] uppercase text-ink/55">
                 {localeNames[locale]}
               </p>
             </div>
-            <span className="flex items-center justify-between border-t-2 border-ink/15 pt-3 font-mono text-[10px] tracking-[0.14em] uppercase">
+            <span className="flex items-center justify-between border-t border-ink/15 pt-3 font-mono text-[9px] tracking-[0.1em] uppercase">
               {copy.enter}
               <ArrowUpRight
                 aria-hidden="true"

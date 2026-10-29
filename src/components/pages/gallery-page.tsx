@@ -33,7 +33,6 @@ export async function GalleryPageContent({ locale }: { locale: Locale }) {
         eyebrow={t("eyebrow")}
         title={t("title")}
         intro={t("intro")}
-        accent="bg-sun"
         meta={
           <div className="flex items-center gap-4 border-2 border-ink bg-cream px-4 py-3 shadow-[5px_5px_0_var(--color-ink)]">
             <div>

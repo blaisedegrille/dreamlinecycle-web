@@ -44,7 +44,6 @@ export async function ServicesPageContent({ locale }: { locale: Locale }) {
         eyebrow={t("eyebrow")}
         title={t("title")}
         intro={t("intro")}
-        accent="bg-cobalt"
         meta={
           <div className="grid grid-cols-3 gap-3 border-2 border-ink bg-cream p-4 shadow-[5px_5px_0_var(--color-ink)] lg:grid-cols-1">
             {facts.map((item) => (
@@ -78,10 +77,6 @@ export async function ServicesPageContent({ locale }: { locale: Locale }) {
             ))}
 
             <div className="relative flex flex-col justify-between gap-5 overflow-hidden border-2 border-ink bg-sun p-6 shadow-[6px_6px_0_var(--color-ink)] sm:col-span-2">
-              <span
-                aria-hidden="true"
-                className="absolute -right-6 -bottom-8 h-32 w-32 rounded-full border-[12px] border-ink/10"
-              />
               <div className="relative">
                 <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-ink/60">
                   {t("bookTitle")}
@@ -100,15 +95,6 @@ export async function ServicesPageContent({ locale }: { locale: Locale }) {
       </section>
 
       <section className="relative overflow-hidden border-b-2 border-ink bg-ink text-paper">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage: "radial-gradient(currentColor 1px, transparent 1.4px)",
-            backgroundSize: "15px 15px",
-            opacity: 0.06,
-          }}
-        />
         <div className="wrap relative py-14 sm:py-18 lg:py-24">
           <SectionHeading
             eyebrow={hero("processEyebrow")}
@@ -125,7 +111,7 @@ export async function ServicesPageContent({ locale }: { locale: Locale }) {
                   (index === processSteps.length - 1 ? "sm:border-r-0" : "")
                 }
               >
-                <span className="font-display text-[clamp(2.8rem,6vw,4.8rem)] leading-none tracking-[-0.05em] text-sun">
+                <span className="font-display text-[clamp(2.8rem,6vw,4.8rem)] leading-none tracking-[-0.05em] text-race">
                   {step.number}
                 </span>
                 <h3 className="mt-4 font-display text-xl leading-none uppercase">

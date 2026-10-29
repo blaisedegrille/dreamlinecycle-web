@@ -29,7 +29,6 @@ export async function BlogPageContent({ locale }: { locale: Locale }) {
         eyebrow={`${t("eyebrow")} · ${String(posts.length).padStart(2, "0")}`}
         title={t("title")}
         intro={t("intro")}
-        accent="bg-mint"
         meta={
           <a
             href={withBasePath(`/rss/${locale}.xml`)}

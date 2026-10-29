@@ -27,7 +27,6 @@ export async function LegalPage({
         eyebrow={eyebrow}
         title={title}
         intro={intro}
-        accent="bg-cobalt"
         meta={
           <div className="flex items-center gap-3 border-2 border-ink bg-cream px-4 py-3 shadow-[5px_5px_0_var(--color-ink)]">
             <span className="flex h-10 w-10 items-center justify-center border-2 border-ink bg-sun">

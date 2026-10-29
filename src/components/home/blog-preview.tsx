@@ -14,7 +14,7 @@ export async function HomeBlog({ locale }: { locale: Locale }) {
   if (posts.length === 0) return null;
 
   return (
-    <section className="border-b-2 border-ink bg-paper" data-reveal>
+    <section className="border-b-2 border-ink bg-paper">
       <div className="wrap py-14 sm:py-18 lg:py-24">
         <SectionHeading
           eyebrow={t("blogEyebrow")}

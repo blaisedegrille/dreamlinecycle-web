@@ -125,7 +125,6 @@ export async function BlogPostPageContent({
         eyebrow={`${t("eyebrow")} / ${formatDate(post.date, locale)}`}
         title={post.title}
         intro={post.description}
-        accent="bg-mint"
         meta={
           <div className="flex flex-col gap-3 border-2 border-ink bg-cream p-4 shadow-[5px_5px_0_var(--color-ink)]">
             <div className="flex items-center gap-2 font-mono text-[9px] tracking-[0.14em] uppercase text-ink/55">

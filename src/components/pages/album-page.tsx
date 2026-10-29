@@ -74,7 +74,6 @@ export async function AlbumPageContent({
         eyebrow={`${t("eyebrow")} / ${t("album")}`}
         title={album.title[locale]}
         intro={album.description[locale]}
-        accent="bg-sun"
         meta={
           <div className="flex items-center gap-4 border-2 border-ink bg-cream px-4 py-3 shadow-[5px_5px_0_var(--color-ink)]">
             <div>

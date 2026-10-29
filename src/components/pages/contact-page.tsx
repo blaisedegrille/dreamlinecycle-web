@@ -105,7 +105,6 @@ export async function ContactPageContent({ locale }: { locale: Locale }) {
         eyebrow={t("eyebrow")}
         title={t("title")}
         intro={t("intro")}
-        accent="bg-race"
         meta={
           <div className="border-2 border-ink bg-cream p-4 shadow-[5px_5px_0_var(--color-ink)]">
             <p className="font-mono text-[9px] tracking-[0.16em] uppercase text-ink/45">

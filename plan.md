@@ -245,53 +245,53 @@ draft: false
 
 ---
 
-## 6. Design system — “Bold Retro Cycling”
+## 6. Design system — “Industrial Workshop”
 
-A modern reinterpretation of 70s/80s cycling posters: aged paper, heavy ink type, racing colors, halftone textures, sticker badges and thick rules — laid out on a clean contemporary grid so it stays premium, not kitschy.
+A minimal, professional visual language inspired by workshop equipment and technical product catalogues: disciplined grids, square geometry, fine rules, restrained labels, and confident typography. Photography and real workshop details provide character; decorative poster textures, sticker badges, exaggerated shadows, and unnecessary motion are avoided.
 
 ### 6.1 Palette
 
-| Token    | Hex       | Use                           |
-| -------- | --------- | ----------------------------- |
-| `paper`  | `#F4EBDD` | page background               |
-| `ink`    | `#17150F` | text, borders, footer         |
-| `race`   | `#E8401C` | primary CTA, highlights       |
-| `cobalt` | `#2440E8` | secondary blocks, links       |
-| `sun`    | `#F2C230` | badges, marquee, accents      |
-| `mint`   | `#0F7A63` | success states, small accents |
-| `steel`  | `#8C8778` | muted text (contrast-checked) |
+| Token    | Hex       | Use                                  |
+| -------- | --------- | ------------------------------------ |
+| `paper`  | `#F3F3F3` | page background                      |
+| `cream`  | `#FFFFFF` | surfaces and cards                   |
+| `ink`    | `#151515` | text, rules, header/footer           |
+| `race`   | `#C51F2B` | restrained CTA and active-state red |
+| `cobalt` | `#727272` | neutral mid-grey compatibility token|
+| `sun`    | `#C9C9C9` | light-grey compatibility token      |
+| `mint`   | `#55595D` | dark-grey compatibility token       |
+| `steel`  | `#626262` | secondary text                      |
 
-Rules: ink text on paper/sun/mint; paper text on ink/race/cobalt. No gradients on text. Accent colors never used for long body copy.
+Rules: use only black, white, red and neutral greys for interface surfaces and text. Keep red for calls to action, active states and small indicators. Preserve sufficient contrast; never use accent colors for long body copy.
 
 ### 6.2 Typography
 
-| Role      | Font                      | Usage                                                    |
-| --------- | ------------------------- | -------------------------------------------------------- |
-| Display   | `Archivo Black`           | hero, section titles, footer wordmark (uppercase, tight) |
-| Editorial | `Instrument Serif` italic | pull quotes, eyebrow accents                             |
-| Body      | `Space Grotesk`           | paragraphs, nav, buttons                                 |
-| Mono      | `Space Mono`              | labels, numbering, dates, tags                           |
+| Role      | Font            | Usage                                                |
+| --------- | --------------- | ---------------------------------------------------- |
+| Display   | `Space Grotesk` | hero, section titles, navigation, buttons            |
+| Body      | `Space Grotesk` | paragraphs and forms                                 |
+| Mono      | `Space Mono`    | technical labels, numbering, dates, metadata         |
 
 - All via `next/font/google`, subsets `latin` + `latin-ext` (Hungarian ő/ű), `display: swap`, self-hosted at build.
 - Fluid type with `clamp()`; hero 56 → 160 px.
 
 ### 6.3 Texture & components
 
-- Halftone dots (CSS radial-gradient), subtle grain (inline SVG), 2 px rules, hard offset shadows, 2–6° sticker rotations.
-- `Button` (solid/outline/ghost), `StickerBadge`, `SectionHeading`, `Marquee`, `TicketCard`, `FactPlate`, `Reveal`, `TiltCard`, `Picture`, `Lightbox`, `Accordion`, `LanguageSwitcher`, `ConsentBanner`, `ContactForm`.
-- Rounded corners kept minimal (0–4 px) except pill chips.
+- Fine dividers, restrained grid alignment, square corners, flat surfaces, and clear red highlights.
+- `Button` (solid/outline/ghost), `SectionHeading`, `ServiceCard`, `Picture`, `Lightbox`, `Accordion`, `LanguageSwitcher`, `ConsentBanner`, `ContactForm`.
+- No decorative shadows, distressed textures, or sticker treatments; use consistent 1 px rules and square geometry.
 - Breakpoints: 360 / 640 / 768 / 1024 / 1280 / 1536.
 
 ### 6.4 Motion
 
-- Scroll reveals (12–24 px + fade, stagger), marquee, image parallax, hover lift/tilt, lightbox zoom.
-- 150–400 ms, ease-out; no motion that blocks reading.
+- Restrained hover/focus transitions; no marquee, parallax, or hover tilt.
+- 150–250 ms, ease-out; no motion that blocks reading.
 - All disabled under `prefers-reduced-motion`; no heavy WebGL/three.js.
 
 ### 6.5 Accessibility
 
 - Contrast AA on every token pairing.
-- Visible `:focus-visible` outline in `cobalt`/`race`.
+- Visible `:focus-visible` outline in `race`.
 - Semantic landmarks, one `h1` per page, correct heading order.
 - Gallery alt text required at build time (fails build if missing, unless decorative).
 - Lightbox/menu/accordion with keyboard + ARIA, focus restoration.

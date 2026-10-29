@@ -57,7 +57,7 @@ export function BlogCard({
           ) : null}
         </div>
 
-        <div className="flex flex-1 flex-col border-x-2 border-b-2 border-ink bg-cream p-5 transition-colors group-hover:bg-[#fffaf0]">
+        <div className="flex flex-1 flex-col border-x-2 border-b-2 border-ink bg-cream p-5 transition-colors group-hover:bg-paper">
           <div className="flex items-center gap-3 font-mono text-[9px] tracking-[0.12em] uppercase text-ink/50">
             <span className="flex items-center gap-1">
               <Clock aria-hidden="true" className="h-3 w-3" strokeWidth={2} />

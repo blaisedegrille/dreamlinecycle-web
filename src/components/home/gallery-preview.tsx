@@ -18,7 +18,7 @@ export async function HomeGallery({ locale }: { locale: Locale }) {
   const preview = images.slice(0, 5);
 
   return (
-    <section className="border-b-2 border-ink bg-paper" data-reveal>
+    <section className="border-b-2 border-ink bg-paper">
       <div className="wrap py-14 sm:py-18 lg:py-24">
         <SectionHeading
           eyebrow={t("galleryEyebrow")}

@@ -28,7 +28,7 @@ export async function Footer({ locale }: { locale: Locale }) {
   const contact = await getTranslations({ locale, namespace: "contact" });
 
   return (
-    <footer className="border-t-2 border-ink bg-ink text-paper">
+    <footer className="border-t border-paper/15 bg-ink text-paper">
       <section className="border-b border-paper/15 px-4 py-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-5xl">
           <p className="eyebrow text-center text-paper/45">{t("workshop")}</p>

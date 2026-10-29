@@ -49,7 +49,7 @@ export function Header() {
   return (
     <>
       <div className="bg-ink text-paper">
-        <div className="wrap flex h-8 items-center justify-between gap-4 font-mono text-[9px] tracking-[0.16em] uppercase sm:text-[10px]">
+        <div className="wrap flex h-8 items-center justify-between gap-4 font-mono text-[9px] tracking-[0.1em] uppercase sm:text-[10px]">
           <span className="truncate">
             Pécs, Hegyalja u. 20.
             <span className="mx-2 hidden text-paper/40 sm:inline">/</span>
@@ -67,8 +67,8 @@ export function Header() {
 
       <header
         className={cn(
-          "sticky top-0 z-50 border-b-2 border-ink bg-paper/95 backdrop-blur-sm transition-[padding] duration-200",
-          scrolled ? "shadow-[0_2px_0_rgba(23,21,15,0.08)]" : "",
+          "sticky top-0 z-50 border-b border-ink/15 bg-paper/95 backdrop-blur-sm transition-[padding] duration-200",
+          scrolled ? "shadow-none" : "",
         )}
       >
         <div
@@ -98,9 +98,9 @@ export function Header() {
                     href={item.href}
                     aria-current={isActive(item.href) ? "page" : undefined}
                     className={cn(
-                      "relative py-2 font-mono text-[11px] tracking-[0.12em] uppercase transition-colors hover:text-race",
+                      "relative py-2 font-body text-[12px] font-semibold tracking-[0.02em] transition-colors hover:text-race",
                       isActive(item.href) &&
-                        "after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[3px] after:bg-race",
+                        "after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:bg-race",
                     )}
                   >
                     {t(item.key)}
@@ -124,7 +124,7 @@ export function Header() {
               onClick={() => setOpen(true)}
               aria-label={t("menu")}
               aria-expanded={open}
-              className="flex h-10 w-10 items-center justify-center border-2 border-ink transition-colors hover:bg-ink hover:text-paper lg:hidden"
+              className="flex h-10 w-10 items-center justify-center border border-ink transition-colors hover:bg-ink hover:text-paper lg:hidden"
             >
               <Menu aria-hidden="true" className="h-5 w-5" strokeWidth={2.2} />
             </button>
@@ -139,7 +139,7 @@ export function Header() {
           aria-label={t("menu")}
           className="fixed inset-0 z-[60] flex flex-col bg-ink text-paper lg:hidden"
         >
-          <div className="wrap flex items-center justify-between border-b border-paper/20 py-3.5">
+              <div className="wrap flex items-center justify-between border-b border-paper/20 py-3.5">
             <Link href="/" onClick={() => setOpen(false)} aria-label={site.name}>
               <Logo markClassName="h-9 w-9" />
             </Link>

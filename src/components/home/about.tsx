@@ -8,11 +8,11 @@ export async function HomeAbout({ locale }: { locale: Locale }) {
   const facts = t.raw("facts") as { value: string; label: string }[];
 
   return (
-    <section className="border-b-2 border-ink bg-paper" data-reveal>
+    <section className="border-b border-ink/15 bg-paper">
       <div className="wrap grid gap-10 py-14 sm:py-18 lg:grid-cols-12 lg:gap-12 lg:py-24">
         <div className="lg:col-span-5">
           <p className="flex items-center gap-3 font-mono text-[10px] tracking-[0.18em] uppercase text-ink/50">
-            <span className="border-2 border-ink bg-ink px-2 py-1 text-paper">01</span>
+            <span className="border border-ink bg-ink px-2 py-1 text-paper">01</span>
             {t("aboutEyebrow")}
           </p>
 
@@ -20,8 +20,8 @@ export async function HomeAbout({ locale }: { locale: Locale }) {
             {t("aboutTitle")}
           </h2>
 
-          <div className="mt-8 inline-flex items-center gap-3 border-2 border-ink bg-cream px-4 py-3 shadow-[4px_4px_0_var(--color-ink)]">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-ink bg-sun">
+          <div className="mt-8 inline-flex items-center gap-3 border border-ink/15 bg-cream px-4 py-3">
+            <span className="flex h-10 w-10 items-center justify-center border border-ink/15 bg-paper-deep">
               <MapPin aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
             </span>
             <span className="font-mono text-[10px] leading-relaxed tracking-[0.12em] uppercase">
@@ -39,19 +39,13 @@ export async function HomeAbout({ locale }: { locale: Locale }) {
             {t("aboutBody")}
           </p>
 
-          <blockquote className="relative mt-8 border-l-4 border-race pl-5 sm:pl-6">
-            <span
-              aria-hidden="true"
-              className="absolute -top-6 -left-1 font-serif text-6xl text-race/25"
-            >
-              &ldquo;
-            </span>
-            <p className="max-w-xl font-serif text-[clamp(1.4rem,2.8vw,2rem)] leading-[1.25] italic">
+          <blockquote className="relative mt-8 border-l-2 border-race pl-5 sm:pl-6">
+            <p className="max-w-xl font-body text-[clamp(1.2rem,2.3vw,1.6rem)] leading-[1.4] font-medium">
               {t("aboutQuote")}
             </p>
           </blockquote>
 
-          <div className="mt-10 grid grid-cols-3 gap-3 border-t-2 border-ink pt-6 sm:gap-5">
+          <div className="mt-10 grid grid-cols-3 gap-3 border-t border-ink/20 pt-6 sm:gap-5">
             {facts.map((fact) => (
               <div key={fact.label}>
                 <p className="font-display text-[clamp(1.8rem,4vw,2.9rem)] leading-none tracking-[-0.04em]">

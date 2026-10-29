@@ -1,0 +1,71 @@
+{
+  "order": 2,
+  "title": {
+    "hu": "Műhely",
+    "en": "Workshop",
+    "de": "Werkstatt"
+  },
+  "description": {
+    "hu": "Pillanatok a Hegyalja utcai műhelyből.",
+    "en": "Moments from the workshop on Hegyalja utca.",
+    "de": "Momente aus der Werkstatt in der Hegyalja utca."
+  },
+  "cover": "workshop-01-wheel-day.jpg",
+  "placeholder": true,
+  "orderFiles": [
+    "workshop-01-wheel-day.jpg",
+    "workshop-02-frame-stand.jpg",
+    "workshop-03-bench-tools.jpg",
+    "workshop-04-packing.jpg"
+  ],
+  "images": {
+    "workshop-01-wheel-day.jpg": {
+      "alt": {
+        "hu": "Retró plakát kézi keréképítésről",
+        "en": "Retro poster about hand-built wheels",
+        "de": "Retro-Poster über handgebaute Laufräder"
+      },
+      "caption": {
+        "hu": "WHEEL DAY — workshop 01",
+        "en": "WHEEL DAY — workshop 01",
+        "de": "WHEEL DAY — workshop 01"
+      }
+    },
+    "workshop-02-frame-stand.jpg": {
+      "alt": {
+        "hu": "Retró plakát vázkészítésről",
+        "en": "Retro poster about frame preparation",
+        "de": "Retro-Poster über Rahmenvorbereitung"
+      },
+      "caption": {
+        "hu": "ON THE STAND — workshop 02",
+        "en": "ON THE STAND — workshop 02",
+        "de": "ON THE STAND — workshop 02"
+      }
+    },
+    "workshop-03-bench-tools.jpg": {
+      "alt": {
+        "hu": "Retró plakát a műhely munkapadjáról",
+        "en": "Retro poster of the workshop bench",
+        "de": "Retro-Poster der Werkbank"
+      },
+      "caption": {
+        "hu": "BENCH — workshop 03",
+        "en": "BENCH — workshop 03",
+        "de": "BENCH — workshop 03"
+      }
+    },
+    "workshop-04-packing.jpg": {
+      "alt": {
+        "hu": "Retró plakát kerékpár csomagolásáról",
+        "en": "Retro poster about packing a bicycle",
+        "de": "Retro-Poster über das Verpacken eines Fahrrads"
+      },
+      "caption": {
+        "hu": "BOXED — workshop 04",
+        "en": "BOXED — workshop 04",
+        "de": "BOXED — workshop 04"
+      }
+    }
+  }
+}

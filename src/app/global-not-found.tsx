@@ -19,20 +19,14 @@ export default function GlobalNotFound() {
     <html lang="en" className={fontVariables}>
       <body>
         <div className="relative flex min-h-dvh flex-col overflow-x-clip bg-paper">
-          <div className="pointer-events-none absolute inset-0 grid-paper opacity-70" aria-hidden="true" />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute top-1/3 -right-24 h-[28rem] w-[28rem] rounded-full border-[22px] border-cobalt/20"
-          />
-
-          <header className="relative z-10 border-b-2 border-ink/10">
+          <header className="relative z-10 border-b border-ink/15">
             <div className="wrap flex h-16 items-center justify-between gap-4">
               <Link href="/hu/" aria-label={site.name}>
                 <Logo markClassName="h-10 w-10" />
               </Link>
               <a
                 href={site.phoneHref}
-                className="flex items-center gap-1.5 border-2 border-ink px-2.5 py-1.5 font-mono text-[10px] tracking-[0.14em] uppercase transition-colors hover:bg-ink hover:text-paper"
+                className="flex items-center gap-1.5 border border-ink px-2.5 py-1.5 font-mono text-[10px] tracking-[0.1em] uppercase transition-colors hover:bg-ink hover:text-paper"
               >
                 <Phone aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2.2} />
                 {site.phone}
@@ -47,7 +41,7 @@ export default function GlobalNotFound() {
                 <h1 className="mt-3 display text-[clamp(3.4rem,10vw,7.5rem)] leading-[0.82]">
                   Chain
                   <br />
-                  <span className="serif-accent inline-block text-[0.76em] normal-case text-race">
+                  <span className="inline-block text-[0.76em] normal-case text-race">
                     slipped.
                   </span>
                 </h1>
@@ -86,10 +80,9 @@ export default function GlobalNotFound() {
               </div>
 
               <div className="relative hidden lg:block">
-                <div className="relative mx-auto aspect-[4/5] max-w-[24rem] overflow-hidden rounded-t-[12rem] border-[3px] border-ink bg-cream">
-                  <span className="absolute inset-x-0 top-0 h-3 bg-race" aria-hidden="true" />
-                  <BikeIllustration className="absolute top-1/2 left-1/2 w-[135%] -translate-x-1/2 -translate-y-1/2 text-ink" />
-                  <span className="absolute inset-x-0 bottom-0 border-t-2 border-ink bg-sun px-4 py-3 text-center font-mono text-[10px] tracking-[0.18em] uppercase">
+                <div className="relative mx-auto aspect-[4/5] max-w-[24rem] overflow-hidden bg-ink text-paper">
+                  <BikeIllustration className="absolute top-1/2 left-1/2 w-[135%] -translate-x-1/2 -translate-y-1/2 text-paper" />
+                  <span className="absolute inset-x-0 bottom-0 border-t border-paper/20 bg-ink px-4 py-3 text-center font-mono text-[10px] tracking-[0.12em] uppercase">
                     Dreamline Cycle · Pécs
                   </span>
                 </div>

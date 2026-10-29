@@ -8,7 +8,6 @@ export function PageHero({
   meta,
   children,
   className,
-  accent = "bg-race",
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -16,22 +15,16 @@ export function PageHero({
   meta?: ReactNode;
   children?: ReactNode;
   className?: string;
-  accent?: string;
 }) {
   return (
-    <section className={cn("relative overflow-hidden border-b-2 border-ink", className)}>
-      <div className="pointer-events-none absolute inset-0 grid-paper opacity-60" aria-hidden="true" />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full border-[18px] border-ink/10 sm:h-80 sm:w-80"
-      />
+    <section className={cn("relative overflow-hidden border-b border-ink/15 bg-paper", className)}>
       <div className="wrap relative grid gap-8 py-12 sm:py-16 lg:grid-cols-[1fr_auto] lg:items-end lg:py-20">
         <div className="max-w-3xl">
-          <p className="eyebrow flex items-center gap-2 text-ink/60">
-            <span className={cn("inline-block h-2 w-2", accent)} aria-hidden="true" />
+          <p className="eyebrow flex items-center gap-3 text-ink/60">
+            <span className="inline-block h-px w-8 bg-race" aria-hidden="true" />
             {eyebrow}
           </p>
-          <h1 className="display mt-4 text-[clamp(2.8rem,8vw,6.2rem)] leading-[0.84]">{title}</h1>
+          <h1 className="display mt-5 text-[clamp(2.8rem,8vw,6.2rem)] leading-[0.9]">{title}</h1>
           {intro ? (
             <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-ink/75 sm:text-lg">
               {intro}

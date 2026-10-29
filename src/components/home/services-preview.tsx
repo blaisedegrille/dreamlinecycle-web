@@ -12,7 +12,7 @@ export async function HomeServices({ locale }: { locale: Locale }) {
   const common = await getTranslations({ locale, namespace: "common" });
 
   return (
-    <section className="border-b-2 border-ink bg-paper-deep" data-reveal>
+    <section className="border-b-2 border-ink bg-paper-deep">
       <div className="wrap py-14 sm:py-18 lg:py-24">
         <SectionHeading
           eyebrow={t("servicesEyebrow")}
@@ -38,10 +38,6 @@ export async function HomeServices({ locale }: { locale: Locale }) {
           ))}
 
           <div className="relative flex flex-col justify-between gap-6 overflow-hidden border-2 border-ink bg-ink p-5 text-paper shadow-[6px_6px_0_var(--color-race)] sm:col-span-2 sm:p-7 lg:col-span-2">
-            <div
-              aria-hidden="true"
-              className="absolute -right-8 -bottom-10 h-40 w-40 rounded-full border-[14px] border-paper/10"
-            />
             <div className="relative">
               <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-sun">
                 {t("servicesEyebrow")} · 07

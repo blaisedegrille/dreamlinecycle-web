@@ -9,16 +9,7 @@ export async function HomeProcess({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "home" });
 
   return (
-    <section className="relative overflow-hidden border-b-2 border-ink bg-ink text-paper" data-reveal>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "radial-gradient(currentColor 1px, transparent 1.4px)",
-          backgroundSize: "14px 14px",
-        }}
-      />
+    <section className="relative overflow-hidden border-b border-ink bg-ink text-paper">
       <div className="wrap relative py-14 sm:py-18 lg:py-24">
         <SectionHeading
           eyebrow={t("processEyebrow")}
@@ -27,7 +18,7 @@ export async function HomeProcess({ locale }: { locale: Locale }) {
           tone="dark"
           action={
             <span className="hidden items-center gap-2 font-mono text-[10px] tracking-[0.16em] uppercase text-paper/45 md:flex">
-              <ArrowDownRight aria-hidden="true" className="h-4 w-4 text-sun" strokeWidth={2} />
+          <ArrowDownRight aria-hidden="true" className="h-4 w-4 text-race" strokeWidth={2} />
               04 steps
             </span>
           }
@@ -43,12 +34,12 @@ export async function HomeProcess({ locale }: { locale: Locale }) {
               )}
             >
               <div className="flex items-start justify-between gap-4">
-                <span className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-none tracking-[-0.05em] text-sun">
+                <span className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-none tracking-[-0.05em] text-race">
                   {step.number}
                 </span>
                 <span
                   aria-hidden="true"
-                  className="mt-2 block h-2 w-2 rounded-full border border-paper/70 transition-colors group-hover:bg-sun group-hover:border-sun"
+                  className="mt-2 block h-2 w-2 border border-paper/70 transition-colors group-hover:bg-race group-hover:border-race"
                 />
               </div>
               <h3 className="mt-5 font-display text-xl leading-none tracking-[-0.02em] uppercase">
